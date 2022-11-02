@@ -2,32 +2,72 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletBehavior : EnemyDetection
+public class BulletBehavior : MonoBehaviour
 {
     public float firingSpeed;
+    public Rigidbody bulletRb;
+    public float outOfBoundsZ = 20;
+    public float outOfBoundsX = 25;
+
+    private bool coRunning;
+    private float destroyDelay = 0.3F;
 
     //public GameObject enemy;
 
-    // Start is called before the first frame update
-    void update()
+    private void Start()
     {
-        Vector3 goToDirection = (enemyTransform - transform.position);
+        // Initial force
 
-        transform.position += transform.forward * Time.deltaTime * firingSpeed;
+        bulletRb = GetComponent<Rigidbody>();
+        bulletRb.AddForce(bulletRb.transform.forward * firingSpeed, ForceMode.Impulse);
 
+    }
+    private void Update()
+    {
+        //Out of bounds detection Z,X und Destroy
+
+        if (transform.position.z >= outOfBoundsZ || transform.position.z <= -outOfBoundsZ)
+        {
+            Destroy(gameObject);
+        }
+        else if (transform.position.x >= outOfBoundsX || transform.position.x <= -outOfBoundsX)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "EnemyCurrent")
         {
-            // gegner leben --
-            Debug.Log("hit");
-            Destroy(gameObject);
+
+            //Delay on hit => otherwise no physic collition
+
+            if(!coRunning)
+            {
+
+                StartCoroutine(Wait());
+                Debug.Log("hit enemy");
+
+            }
+
         }
-        else
+        else if (other.gameObject.tag == "Enviroment")
         {
-            //Destroy(gameObject);
+
+            Destroy(gameObject);
+            Debug.Log("hit enviroment");
+
         }
+    }
+    IEnumerator Wait()
+    {
+        coRunning = true;
+
+        yield return new WaitForSeconds(destroyDelay);
+        Destroy(gameObject);
+
+        coRunning = false;
+
     }
 }

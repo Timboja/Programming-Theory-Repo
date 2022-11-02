@@ -43,9 +43,10 @@ public class Tower : MonoBehaviour
 
             if (!attackCoRunning)
             {
-                StartCoroutine(Attack());
-            }
 
+                StartCoroutine(Attack());
+
+            }
 
         }
 
@@ -63,7 +64,7 @@ public class Tower : MonoBehaviour
         attackCoRunning = true;
 
         yield return new WaitForSeconds(attackSpeed);
-        Instantiate(bullet, transform.position + new Vector3(0, 0.2F, 0.6F), transform.rotation);
+        Instantiate(bullet, transform.position, transform.rotation);
 
         attackCoRunning = false;
 
