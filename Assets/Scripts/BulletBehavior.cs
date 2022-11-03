@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletBehavior : MonoBehaviour
+public class BulletBehavior : MonoBehaviour 
 {
     public float firingSpeed;
     public Rigidbody bulletRb;
     public float outOfBoundsZ = 20;
     public float outOfBoundsX = 25;
+    public int attackDamageBullet;
 
     private bool coRunning;
     private float destroyDelay = 0.3F;
+
+    public GameObject mainManager;
 
     //public GameObject enemy;
 
     private void Start()
     {
+        mainManager = GameObject.FindGameObjectWithTag("MainManager");
+
         // Initial force
 
         bulletRb = GetComponent<Rigidbody>();
         bulletRb.AddForce(bulletRb.transform.forward * firingSpeed, ForceMode.Impulse);
+
+        attackDamageBullet = mainManager.GetComponent<MainManager>().AttackDamageNormalTower;
 
     }
     private void Update()

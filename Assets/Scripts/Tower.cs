@@ -17,6 +17,7 @@ public class Tower : MonoBehaviour
 
     public GameObject detectionSphere;
     public GameObject bullet;
+    public GameObject MainManager;
 
 
     // Start is called before the first frame update
@@ -35,6 +36,8 @@ public class Tower : MonoBehaviour
 
         enemyLocked = detectionSphere.GetComponent<EnemyDetection>().enemyLocked;
         enemyTransform = detectionSphere.GetComponent<EnemyDetection>().enemyTransform;
+
+        MainManager.GetComponent<MainManager>().AttackDamageNormalTower = attackDamage;
 
         if (enemyLocked == true)
         {
@@ -65,6 +68,8 @@ public class Tower : MonoBehaviour
 
         yield return new WaitForSeconds(attackSpeed);
         Instantiate(bullet, transform.position, transform.rotation);
+        
+
 
         attackCoRunning = false;
 
@@ -75,4 +80,5 @@ public class Tower : MonoBehaviour
         //Updates the range of the tower
         detectionSphere.transform.localScale = new Vector3(range, range, range);
     }
+
 }
