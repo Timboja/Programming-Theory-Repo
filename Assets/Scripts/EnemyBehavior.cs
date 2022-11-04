@@ -7,12 +7,18 @@ public class EnemyBehavior : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     public int damage;
+    public int bounty;
 
+    public bool enemyDown;
+
+    public GameObject mainManager;
     public HealthBar healthbar;
 
     // Start is called before the first frame update
     void Start()
     {
+        mainManager = GameObject.FindGameObjectWithTag("MainManager");
+
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
     }
@@ -34,7 +40,7 @@ public class EnemyBehavior : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
-            //Money++ ?
+            mainManager.GetComponent<MainManager>().money += bounty;
         }
 
     }

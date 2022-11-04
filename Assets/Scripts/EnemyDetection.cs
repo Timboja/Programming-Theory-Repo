@@ -8,6 +8,17 @@ public class EnemyDetection : MonoBehaviour
 
     public bool enemyLocked;
 
+    public void Update()
+    {
+
+        //Feuer einstellen falls Enemy zerstört wurde
+
+        if (enemyTransform == null && enemyLocked == true)
+        {
+            enemyLocked = false;
+        }
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         //Chicks if a Enemy is in range and its the first Enemy. 
