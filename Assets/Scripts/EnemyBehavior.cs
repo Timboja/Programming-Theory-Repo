@@ -23,13 +23,6 @@ public class EnemyBehavior : MonoBehaviour
         healthbar.SetMaxHealth(maxHealth);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-
-
-    }
     void TakeDamage(int damage)
     {
 
@@ -37,10 +30,13 @@ public class EnemyBehavior : MonoBehaviour
 
         healthbar.SetHealth(currentHealth);
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !enemyDown)
         {
-            Destroy(gameObject);
+
             mainManager.GetComponent<MainManager>().money += bounty;
+            Destroy(gameObject);
+            enemyDown = true;
+
         }
 
     }

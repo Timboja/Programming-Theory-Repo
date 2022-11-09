@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171441476012031608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.24, y: 7.109, z: -7.854}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 3240645426346561347}
@@ -91,7 +91,7 @@ SphereCollider:
   m_GameObject: {fileID: 171441476012031608}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -121,13 +121,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565158896681278043}
-  m_LocalRotation: {x: 0.60698086, y: -0, z: -0, w: 0.7947165}
-  m_LocalPosition: {x: 10.23, y: 7.199, z: -7.556}
+  m_LocalRotation: {x: 0.71055806, y: -0, z: -0, w: 0.7036386}
+  m_LocalPosition: {x: 0, y: 0.04, z: 0.2}
   m_LocalScale: {x: 0.1, y: 0.19999999, z: 0.099999994}
   m_Children: []
   m_Father: {fileID: 3240645426346561347}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 74.743, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90.56, y: 0, z: 0}
 --- !u!33 &8149188062774764326
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -186,7 +186,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 565158896681278043}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -203,6 +203,8 @@ GameObject:
   - component: {fileID: 3150444283664070851}
   - component: {fileID: 123776376203779919}
   - component: {fileID: 4171211196770962276}
+  - component: {fileID: 2095662473}
+  - component: {fileID: 2095662474}
   m_Layer: 0
   m_Name: Detection Sphere
   m_TagString: Untagged
@@ -218,8 +220,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3441576172889994912}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.24, y: 7.109, z: -7.854}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 3240645426346561347}
   m_RootOrder: 2
@@ -286,6 +288,38 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &2095662473
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3441576172889994912}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2095662474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3441576172889994912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9012691493d40189530d2fe6aaefab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTransform: {fileID: 0}
+  enemyCurrent: {fileID: 0}
+  enemyNext: {fileID: 0}
+  enemyLocked: 0
 --- !u!1 &4775794441261683235
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3240645426346561347}
-  - component: {fileID: 626217084}
+  - component: {fileID: 196741548}
   m_Layer: 0
   m_Name: Turret Normal
   m_TagString: Untagged
@@ -311,7 +345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4775794441261683235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.000032, y: -5.09897, z: 5.2355614}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5856010865872682023}
@@ -320,7 +354,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &626217084
+--- !u!114 &196741548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -334,6 +368,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 5
   roationSpeed: 0
-  attackSpeed: 0
-  attackDamage: 0
+  attackSpeed: 1
+  attackDamage: 20
+  enemyLocked: 0
+  attackCoRunning: 0
+  enemyTransform: {fileID: 0}
   detectionSphere: {fileID: 3441576172889994912}
+  bullet: {fileID: 2853616695102235967, guid: 9574f3e937e414ba28b879f51e06b38c, type: 3}
+  MainManager: {fileID: 0}

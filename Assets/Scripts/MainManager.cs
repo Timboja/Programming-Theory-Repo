@@ -9,6 +9,7 @@ public class MainManager : MonoBehaviour
     public int money;
 
     public int AttackDamageNormalTower;
+    public float RangeNormalTower;
 
     // Start is called before the first frame update
     void Start()

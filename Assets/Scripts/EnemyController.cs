@@ -18,25 +18,5 @@ public class EnemyController : MonoBehaviour
         agent.SetDestination(endzone.transform.position);
     }
     // Update is called once per frame
-    void Update()
-    {
 
-
-
-    }
 }
-
-//Agent goes where the mouse clicks on the screen
-
-/*
-if (Input.GetMouseButtonDown(0))
-{
-    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-    RaycastHit hit;
-
-    if (Physics.Raycast(ray, out hit))
-    {
-        agent.SetDestination(hit.point);
-    }
-}
-*/
