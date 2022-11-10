@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 23953912}
   m_Layer: 0
   m_Name: Turret Base (13)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 46428996}
   m_Layer: 0
   m_Name: Turret Base (17)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 60000222}
   m_Layer: 0
   m_Name: Turret Base (24)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 105609173}
   m_Layer: 0
   m_Name: Turret Base (5)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   enemyTransform: {fileID: 0}
   detectionSphere: {fileID: 2095662472}
   bullet: {fileID: 2853616695102235967, guid: 9574f3e937e414ba28b879f51e06b38c, type: 3}
-  MainManager: {fileID: 372367218}
+  mainManager: {fileID: 0}
 --- !u!1 &236725244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,7 +1096,7 @@ GameObject:
   - component: {fileID: 237395568}
   m_Layer: 0
   m_Name: Turret Base (29)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1191,7 +1191,7 @@ GameObject:
   - component: {fileID: 278165874}
   m_Layer: 0
   m_Name: Turret Base (22)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1286,7 +1286,7 @@ GameObject:
   - component: {fileID: 284619807}
   m_Layer: 0
   m_Name: Turret Base (27)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1381,7 +1381,7 @@ GameObject:
   - component: {fileID: 295994961}
   m_Layer: 0
   m_Name: Turret Base (30)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1476,7 +1476,7 @@ GameObject:
   - component: {fileID: 302041391}
   m_Layer: 0
   m_Name: Turret Base (4)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1571,7 +1571,7 @@ GameObject:
   - component: {fileID: 344860032}
   m_Layer: 0
   m_Name: Turret Base (6)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1809,7 +1809,7 @@ GameObject:
   - component: {fileID: 478641925}
   m_Layer: 0
   m_Name: Turret Base (16)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1999,7 +1999,7 @@ GameObject:
   - component: {fileID: 637140335}
   m_Layer: 0
   m_Name: Turret Base (7)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2284,7 +2284,7 @@ GameObject:
   - component: {fileID: 650868179}
   m_Layer: 0
   m_Name: Turret Base (18)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2489,7 +2489,7 @@ GameObject:
   - component: {fileID: 673693409}
   m_Layer: 0
   m_Name: Turret Base (10)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2677,7 +2677,7 @@ GameObject:
   - component: {fileID: 721749147}
   m_Layer: 0
   m_Name: Turret Base (8)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3033,7 +3033,7 @@ GameObject:
   - component: {fileID: 779479479}
   m_Layer: 0
   m_Name: Turret Base (23)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3267,7 +3267,7 @@ GameObject:
   - component: {fileID: 857976728}
   m_Layer: 0
   m_Name: Turret Base (21)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3901,7 +3901,7 @@ GameObject:
   - component: {fileID: 977433517}
   m_Layer: 0
   m_Name: Turret Base (20)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3997,7 +3997,7 @@ GameObject:
   - component: {fileID: 1012184922}
   m_Layer: 5
   m_Name: Canvas UI
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4103,6 +4103,7 @@ MonoBehaviour:
   mainManager: {fileID: 372367218}
   spawnerObject: {fileID: 796059350}
   ghostTower: {fileID: 9070305767992978478, guid: 15961fe89d0404d86a6237f2953e9655, type: 3}
+  normalTower: {fileID: 4775794441261683235, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
   moneyText: {fileID: 868028848}
   waveText: {fileID: 1113216828}
   livesText: {fileID: 91909888}
@@ -4124,7 +4125,7 @@ GameObject:
   - component: {fileID: 1015383758}
   m_Layer: 0
   m_Name: Turret Base (3)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4219,7 +4220,7 @@ GameObject:
   - component: {fileID: 1022935144}
   m_Layer: 0
   m_Name: Turret Base
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4314,7 +4315,7 @@ GameObject:
   - component: {fileID: 1055025593}
   m_Layer: 0
   m_Name: Turret Base (26)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4543,7 +4544,7 @@ GameObject:
   - component: {fileID: 1066645235}
   m_Layer: 0
   m_Name: Turret Base (9)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4928,7 +4929,7 @@ GameObject:
   - component: {fileID: 1205115725}
   m_Layer: 0
   m_Name: Turret Base (1)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5118,7 +5119,7 @@ GameObject:
   - component: {fileID: 1292765715}
   m_Layer: 0
   m_Name: Turret Base (25)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5327,7 +5328,7 @@ GameObject:
   - component: {fileID: 1499654005}
   m_Layer: 0
   m_Name: Turret Base (14)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5422,7 +5423,7 @@ GameObject:
   - component: {fileID: 1515314346}
   m_Layer: 0
   m_Name: Turret Base (2)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5833,7 +5834,7 @@ GameObject:
   - component: {fileID: 1608456106}
   m_Layer: 0
   m_Name: Turret Base (11)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5928,7 +5929,7 @@ GameObject:
   - component: {fileID: 1625530589}
   m_Layer: 0
   m_Name: Turret Base (15)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6157,7 +6158,7 @@ GameObject:
   - component: {fileID: 1727004394}
   m_Layer: 0
   m_Name: Turret Base (12)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6468,7 +6469,7 @@ GameObject:
   - component: {fileID: 1777618929}
   m_Layer: 0
   m_Name: Turret Base (28)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6753,7 +6754,7 @@ GameObject:
   - component: {fileID: 1892478150}
   m_Layer: 0
   m_Name: Turret Base (19)
-  m_TagString: Untagged
+  m_TagString: Turret Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
