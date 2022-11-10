@@ -6,10 +6,6 @@ using TMPro;
 public class UI : MonoBehaviour
 {
     public GameObject mainManager;
-    public GameObject spawnerObject;
-
-    public GameObject ghostTower;
-    public GameObject normalTower;
 
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI waveText;
@@ -24,7 +20,6 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnerObject.GetComponent<Spawner>();
         mainManager.GetComponent<MainManager>();
     }
 
@@ -40,35 +35,11 @@ public class UI : MonoBehaviour
         livesUI = mainManager.GetComponent<MainManager>().live;
         livesText.text = "Lives: " + livesUI;
 
-        //Left click
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out RaycastHit raycasthit))
-            {
-                if (raycasthit.transform.CompareTag("Turret Base"))
-                {
-             
-                    Instantiate(normalTower, raycasthit.point, transform.rotation);
-
-                }
-            }
-        }
-
-        //Right click => Deselect the tower
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            normalTowerClicked = false;
-        }
-
     }
 
-    public void StartWave()
+    public void StartWaveClicked()
     {
-        spawnerObject.GetComponent<Spawner>().SpawnWave();
+        mainManager.GetComponent<MainManager>().StartWave();
     }
 
     //When the Tower Image is clicked
@@ -81,7 +52,7 @@ public class UI : MonoBehaviour
 
             normalTowerClicked = true;
 
-            Instantiate(ghostTower, transform.position, transform.rotation);
+            mainManager.GetComponent<MainManager>().BuildTower();
         }
 
     }

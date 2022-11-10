@@ -12,8 +12,9 @@ TagManager:
   - BulletNormalTower
   - MainManager
   - Tower Image
-  - Turret Base
   - UI
+  - Turret Base
+  - Turret
   layers:
   - Default
   - TransparentFX
