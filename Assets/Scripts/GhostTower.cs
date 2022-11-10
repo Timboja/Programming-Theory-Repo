@@ -21,7 +21,7 @@ public class GhostTower : MonoBehaviour
 
         ui = GameObject.FindGameObjectWithTag("UI");
         mainManager = GameObject.FindGameObjectWithTag("MainManager");
-        rangeGhostTower = mainManager.GetComponent<MainManager>().RangeNormalTower;
+        rangeGhostTower = mainManager.GetComponent<MainManager>().baseRangeNormalTower;
 
         detectionSphere.transform.localScale = new Vector3(rangeGhostTower, rangeGhostTower, rangeGhostTower);
     }

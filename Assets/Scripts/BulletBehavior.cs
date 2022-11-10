@@ -10,6 +10,7 @@ public class BulletBehavior : MonoBehaviour
     public float outOfBoundsX = 25;
     public int attackDamageBullet;
 
+    private bool bulletInFlight;
     private bool coRunning;
     private float destroyDelay = 0.3F;
 
@@ -19,14 +20,11 @@ public class BulletBehavior : MonoBehaviour
 
     private void Start()
     {
-        mainManager = GameObject.FindGameObjectWithTag("MainManager");
 
         // Initial force
 
         bulletRb = GetComponent<Rigidbody>();
         bulletRb.AddForce(bulletRb.transform.forward * firingSpeed, ForceMode.Impulse);
-
-        attackDamageBullet = mainManager.GetComponent<MainManager>().AttackDamageNormalTower;
 
     }
     private void Update()
@@ -35,16 +33,35 @@ public class BulletBehavior : MonoBehaviour
 
         if (transform.position.z >= outOfBoundsZ || transform.position.z <= -outOfBoundsZ)
         {
+            bulletInFlight = false;
             Destroy(gameObject);
+
         }
         else if (transform.position.x >= outOfBoundsX || transform.position.x <= -outOfBoundsX)
         {
+            bulletInFlight = false;
             Destroy(gameObject);
+
+        }
+    }
+
+    //Gives the bullet the attack damge of the tower
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Turret" && !bulletInFlight)
+        {
+            Debug.Log("Projektile Trigered");
+
+            attackDamageBullet = other.GetComponent<Tower>().attackDamage;
+
+            bulletInFlight = true;
         }
     }
 
     public void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.tag == "EnemyCurrent")
         {
 
@@ -61,9 +78,10 @@ public class BulletBehavior : MonoBehaviour
         }
         else if (other.gameObject.tag == "Enviroment")
         {
-
+            bulletInFlight = false;
             Destroy(gameObject);
             Debug.Log("hit enviroment");
+
 
         }
     }
@@ -72,6 +90,7 @@ public class BulletBehavior : MonoBehaviour
         coRunning = true;
 
         yield return new WaitForSeconds(destroyDelay);
+        bulletInFlight = false;
         Destroy(gameObject);
 
         coRunning = false;

@@ -8,6 +8,7 @@ public class Tower : MonoBehaviour
     public float roationSpeed;
     public float attackSpeed;
     public int attackDamage;
+    public int cost;
 
     public bool enemyLocked = false;
 
@@ -18,7 +19,6 @@ public class Tower : MonoBehaviour
     public GameObject detectionSphere;
     public GameObject bullet;
     public GameObject mainManager;
-
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +37,6 @@ public class Tower : MonoBehaviour
 
         enemyLocked = detectionSphere.GetComponent<EnemyDetection>().enemyLocked;
         enemyTransform = detectionSphere.GetComponent<EnemyDetection>().enemyTransform;
-
-        mainManager.GetComponent<MainManager>().AttackDamageNormalTower = attackDamage;
-
-
 
         if (enemyLocked == true)
         {
@@ -71,8 +67,6 @@ public class Tower : MonoBehaviour
 
         yield return new WaitForSeconds(attackSpeed);
         Instantiate(bullet, transform.position, transform.rotation);
-        
-
 
         attackCoRunning = false;
 

@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 196741548}
   m_Layer: 0
   m_Name: Turret Normal
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -375,4 +375,4 @@ MonoBehaviour:
   enemyTransform: {fileID: 0}
   detectionSphere: {fileID: 3441576172889994912}
   bullet: {fileID: 2853616695102235967, guid: 9574f3e937e414ba28b879f51e06b38c, type: 3}
-  MainManager: {fileID: 0}
+  mainManager: {fileID: 0}
