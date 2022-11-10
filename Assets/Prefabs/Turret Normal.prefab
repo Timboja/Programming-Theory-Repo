@@ -203,9 +203,10 @@ GameObject:
   - component: {fileID: 3150444283664070851}
   - component: {fileID: 123776376203779919}
   - component: {fileID: 4171211196770962276}
-  - component: {fileID: 2095662473}
   - component: {fileID: 2095662474}
-  m_Layer: 0
+  - component: {fileID: 2095662473}
+  - component: {fileID: 8012156152286837508}
+  m_Layer: 7
   m_Name: Detection Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,6 +289,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2095662474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3441576172889994912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9012691493d40189530d2fe6aaefab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTransform: {fileID: 0}
+  enemyCurrent: {fileID: 0}
+  enemyNext: {fileID: 0}
+  enemyLocked: 0
 --- !u!54 &2095662473
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -304,7 +321,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2095662474
+--- !u!114 &8012156152286837508
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -330,6 +347,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3240645426346561347}
   - component: {fileID: 196741548}
+  - component: {fileID: 196741550}
+  - component: {fileID: 5893339395135186142}
   m_Layer: 0
   m_Name: Turret Normal
   m_TagString: Turret
@@ -370,6 +389,44 @@ MonoBehaviour:
   roationSpeed: 0
   attackSpeed: 1
   attackDamage: 20
+  cost: 0
+  enemyLocked: 0
+  attackCoRunning: 0
+  enemyTransform: {fileID: 0}
+  detectionSphere: {fileID: 3441576172889994912}
+  bullet: {fileID: 2853616695102235967, guid: 9574f3e937e414ba28b879f51e06b38c, type: 3}
+  mainManager: {fileID: 0}
+--- !u!136 &196741550
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775794441261683235}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5893339395135186142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775794441261683235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a9b02dff7784421810a40487e88a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  roationSpeed: 0
+  attackSpeed: 1
+  attackDamage: 20
+  cost: 0
   enemyLocked: 0
   attackCoRunning: 0
   enemyTransform: {fileID: 0}

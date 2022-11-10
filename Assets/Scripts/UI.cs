@@ -52,7 +52,7 @@ public class UI : MonoBehaviour
 
             normalTowerClicked = true;
 
-            mainManager.GetComponent<MainManager>().BuildTower();
+            mainManager.GetComponent<MainManager>().GhostTower();
         }
 
     }

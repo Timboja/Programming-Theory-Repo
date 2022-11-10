@@ -8,6 +8,7 @@ public class EnemyBehavior : MonoBehaviour
     public int currentHealth;
     public int damage;
     public int bounty;
+    public int enemyDamage;
 
     public bool enemyDown;
 
@@ -41,12 +42,25 @@ public class EnemyBehavior : MonoBehaviour
 
     }
 
+    void LifeDamage(int damage)
+    {
+
+        mainManager.GetComponent<MainManager>().live -= damage;
+
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "BulletNormalTower")
         {
             damage = other.GetComponent<BulletBehavior>().attackDamageBullet;
             TakeDamage(damage);
+        }
+
+        if (other.gameObject.tag == "Endzone")
+        {
+            LifeDamage(enemyDamage);
+            Destroy(gameObject);
         }
     }
 }

@@ -51,7 +51,6 @@ public class BulletBehavior : MonoBehaviour
     {
         if (other.gameObject.tag == "Turret" && !bulletInFlight)
         {
-            Debug.Log("Projektile Trigered");
 
             attackDamageBullet = other.GetComponent<Tower>().attackDamage;
 

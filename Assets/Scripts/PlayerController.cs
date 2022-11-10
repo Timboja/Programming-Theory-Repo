@@ -6,7 +6,9 @@ public class PlayerController : MonoBehaviour
 {
 
     public GameObject normalTower;
+
     public GameObject ui;
+    public GameObject mainManager;
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +27,18 @@ public class PlayerController : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit raycasthit))
             {
-                if (raycasthit.transform.CompareTag("Turret Base"))
-                {
 
-                    Instantiate(normalTower, raycasthit.point, transform.rotation);
+                if (raycasthit.transform.CompareTag("Turret Base") && ui.GetComponent<UI>().normalTowerClicked)
+                {
+                    if (mainManager.GetComponent<MainManager>().money >= mainManager.GetComponent<MainManager>().baseCostNormalTower)
+                    {
+                        Instantiate(normalTower, raycasthit.point, transform.rotation);
+                        mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostNormalTower;
+                    }
+                    else
+                    {
+                        Debug.Log("Not enough Money");
+                    }
 
                 }
             }

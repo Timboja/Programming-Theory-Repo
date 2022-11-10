@@ -12,6 +12,7 @@ public class GhostTower : MonoBehaviour
     public GameObject mainManager;
     public GameObject detectionSphere;
     public GameObject ui;
+    public LayerMask layersToHit;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,7 @@ public class GhostTower : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out RaycastHit raycasthit))
+        if (Physics.Raycast(ray, out RaycastHit raycasthit, 100, layersToHit))
         {
             transform.position = raycasthit.point;
         }

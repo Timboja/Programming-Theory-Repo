@@ -8,13 +8,19 @@ public class MainManager : MonoBehaviour
     public int live;
     public int money;
 
-    public float baseRangeNormalTower;
+    public int difficultModifer;
+    public bool waveRunning;
+    public int startEnemys;
 
+    public float baseRangeNormalTower;
     public int baseCostNormalTower;
+
+    public int normalEnemysToSpawn;
 
     public GameObject spawnerObject;
 
     public GameObject ghostTower;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,16 +36,20 @@ public class MainManager : MonoBehaviour
 
     public void StartWave()
     {
-        spawnerObject.GetComponent<Spawner>().SpawnWave();
+        waveRunning = true;
+        wave++;
+
+        normalEnemysToSpawn = Mathf.RoundToInt(((normalEnemysToSpawn + startEnemys)* wave) / 2 + difficultModifer);
+        Debug.Log("normalEnemysToSpawn: " + normalEnemysToSpawn);
+
+        spawnerObject.GetComponent<Spawner>().SpawnWave(normalEnemysToSpawn);
     }
 
-    public void BuildTower()
+    public void GhostTower()
     {
-        if (baseCostNormalTower <= money)
-        {
 
-            Instantiate(ghostTower, transform.position, transform.rotation);
-        }
+        Instantiate(ghostTower, transform.position, transform.rotation);
 
     }
+
 }

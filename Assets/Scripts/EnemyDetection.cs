@@ -37,7 +37,7 @@ public class EnemyDetection : MonoBehaviour
 
         }
 
-        //Checks if there is currently a enemy in the tower lock theen marks it as neext target.
+        //Checks if there is currently a enemy in the tower lock theen marks it as next target.
 
         else if (other.gameObject.tag == "Enemy" && enemyCurrent != null)
         {

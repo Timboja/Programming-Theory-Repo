@@ -4,23 +4,31 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public GameObject mainManager;
     public GameObject enemy;
+    public float spawnDelay;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        mainManager.GetComponent<MainManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnWave(int normalEnemysToSpawn)
     {
-        
+
+        StartCoroutine(SpawnWaveDelay(normalEnemysToSpawn));
+
     }
 
-    public void SpawnWave()
+
+    public IEnumerator SpawnWaveDelay(int normalEnemysToSpawn)
     {
-        Instantiate(enemy, transform.position, transform.rotation);
-    }
+        for (int i = 0; i < normalEnemysToSpawn; i++)
+        {
+            yield return new WaitForSeconds(spawnDelay);
+            Instantiate(enemy, transform.position, transform.rotation);
+        }
 
+    }
 }
