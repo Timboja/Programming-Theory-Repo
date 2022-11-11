@@ -61,7 +61,7 @@ public class BulletBehavior : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "EnemyCurrent")
+        if (other.gameObject.tag == "Enemy")
         {
 
             //Delay on hit => otherwise no physic collition
@@ -70,7 +70,6 @@ public class BulletBehavior : MonoBehaviour
             {
 
                 StartCoroutine(Wait());
-                Debug.Log("hit enemy");
 
             }
 
@@ -79,8 +78,6 @@ public class BulletBehavior : MonoBehaviour
         {
             bulletInFlight = false;
             Destroy(gameObject);
-            Debug.Log("hit enviroment");
-
 
         }
     }

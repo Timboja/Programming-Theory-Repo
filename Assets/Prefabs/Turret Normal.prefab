@@ -346,7 +346,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3240645426346561347}
-  - component: {fileID: 196741548}
   - component: {fileID: 196741550}
   - component: {fileID: 5893339395135186142}
   m_Layer: 0
@@ -373,29 +372,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &196741548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4775794441261683235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a9b02dff7784421810a40487e88a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 5
-  roationSpeed: 0
-  attackSpeed: 1
-  attackDamage: 20
-  cost: 0
-  enemyLocked: 0
-  attackCoRunning: 0
-  enemyTransform: {fileID: 0}
-  detectionSphere: {fileID: 3441576172889994912}
-  bullet: {fileID: 2853616695102235967, guid: 9574f3e937e414ba28b879f51e06b38c, type: 3}
-  mainManager: {fileID: 0}
 --- !u!136 &196741550
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -425,7 +401,7 @@ MonoBehaviour:
   range: 5
   roationSpeed: 0
   attackSpeed: 1
-  attackDamage: 20
+  attackDamage: 2
   cost: 0
   enemyLocked: 0
   attackCoRunning: 0

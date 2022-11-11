@@ -8,7 +8,6 @@ public class Tower : MonoBehaviour
     public float roationSpeed;
     public float attackSpeed;
     public int attackDamage;
-    public int cost;
 
     public bool enemyLocked = false;
 
@@ -45,7 +44,7 @@ public class Tower : MonoBehaviour
 
             if (!attackCoRunning)
             {
-
+                attackCoRunning = true;
                 StartCoroutine(Attack());
 
             }
@@ -63,11 +62,9 @@ public class Tower : MonoBehaviour
 
     IEnumerator Attack()
     {
-        attackCoRunning = true;
 
         yield return new WaitForSeconds(attackSpeed);
         Instantiate(bullet, transform.position, transform.rotation);
-
         attackCoRunning = false;
 
     }

@@ -54,6 +54,7 @@ public class EnemyBehavior : MonoBehaviour
         if (other.gameObject.tag == "BulletNormalTower")
         {
             damage = other.GetComponent<BulletBehavior>().attackDamageBullet;
+            Debug.Log("Take Damage");
             TakeDamage(damage);
         }
 

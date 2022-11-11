@@ -29,7 +29,7 @@ public class EnemyDetection : MonoBehaviour
             enemyCurrent = other.gameObject;
             enemyTransform = enemyCurrent.gameObject.transform;
 
-            enemyCurrent.tag = "EnemyCurrent";
+            //enemyCurrent.tag = "EnemyCurrent";
 
             //Sets the lock for the tower used in Tower.cs
 
@@ -42,7 +42,7 @@ public class EnemyDetection : MonoBehaviour
         else if (other.gameObject.tag == "Enemy" && enemyCurrent != null)
         {
             enemyNext = other.gameObject;
-            enemyNext.tag = "EnemyNext";
+            //enemyNext.tag = "EnemyNext";
 
         }
         
@@ -52,15 +52,14 @@ public class EnemyDetection : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "EnemyCurrent")
+        if (other.gameObject.tag == "Enemy" && enemyCurrent != null)
         {
 
             enemyLocked = false;
             enemyCurrent = null;
             enemyTransform = null;
-            other.gameObject.tag = "Enemy";
 
-            //Checks if there is anothere eenemy in range of the tower then locks that enemy.
+            //Checks if there is anothere enemy in range of the tower then locks that enemy.
 
             if (enemyNext != null)
             {
@@ -68,7 +67,7 @@ public class EnemyDetection : MonoBehaviour
                 enemyNext = null;
                 enemyTransform = enemyCurrent.gameObject.transform;
 
-                enemyCurrent.tag = "EnemyCurrent";
+                //enemyCurrent.tag = "EnemyCurrent";
 
                 enemyLocked = true;
 
