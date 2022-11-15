@@ -9,6 +9,12 @@ public class Tower : MonoBehaviour
     public float attackSpeed;
     public int attackDamage;
 
+    public string towerName;
+    public int kills;
+
+    public int upgradeCost;
+    public float upgradeCostModifier;
+
     public bool enemyLocked = false;
 
     public bool attackCoRunning = false;
@@ -19,53 +25,10 @@ public class Tower : MonoBehaviour
     public GameObject bullet;
     public GameObject mainManager;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        UpdateTowerRange(range);
-
-        //Script reference
-        mainManager = GameObject.FindGameObjectWithTag("MainManager");
-
-        enemyLocked = detectionSphere.GetComponent<EnemyDetection>().enemyLocked;
-        enemyTransform = detectionSphere.GetComponent<EnemyDetection>().enemyTransform;
-
-        if (enemyLocked == true)
-        {
-
-            LockEnemy();
-
-            if (!attackCoRunning)
-            {
-                attackCoRunning = true;
-                StartCoroutine(Attack());
-
-            }
-
-        }
-
-    }
-
     public void LockEnemy()
     {
 
-        transform.LookAt(enemyTransform,Vector3.back);
-
-    }
-
-    IEnumerator Attack()
-    {
-
-        yield return new WaitForSeconds(attackSpeed);
-        Instantiate(bullet, transform.position, transform.rotation);
-        attackCoRunning = false;
+        transform.Find("Sphere").LookAt(enemyTransform,Vector3.back);
 
     }
 

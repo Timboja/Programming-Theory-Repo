@@ -15,6 +15,7 @@ TagManager:
   - UI
   - Turret Base
   - Turret
+  - Detection Sphere
   layers:
   - Default
   - TransparentFX

@@ -51,7 +51,6 @@ public class BulletBehavior : MonoBehaviour
     {
         if (other.gameObject.tag == "Turret" && !bulletInFlight)
         {
-
             attackDamageBullet = other.GetComponent<Tower>().attackDamage;
 
             bulletInFlight = true;
