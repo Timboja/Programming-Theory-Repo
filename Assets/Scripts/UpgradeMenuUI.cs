@@ -19,8 +19,14 @@ public class UpgradeMenuUI : MonoBehaviour
     public int costUi;
     public int levelUi;
 
+    public float outOfBoundsZ;
+    public float outOfBoundsX;
+
     public GameObject towerScript;
     public GameObject mainManager;
+
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +36,17 @@ public class UpgradeMenuUI : MonoBehaviour
 
         towerScript.GetComponent<NormalTower>();
         towerNameText.text = towerScript.GetComponent<NormalTower>().towerName;
+
+        //UI out of bounds check
+
+        if (transform.position.x >= outOfBoundsX)
+        {
+            transform.position = transform.position + new Vector3(-6, 0, 0);
+        }
+        else if (transform.position.z <= outOfBoundsZ)
+        {
+            transform.position = transform.position + new Vector3(0, 0, 5);
+        }
     }
 
     // Update is called once per frame
