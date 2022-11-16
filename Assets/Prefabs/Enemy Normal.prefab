@@ -436,11 +436,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fcf2f21b7244ccfa8dbc70a674b81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 20
   currentHealth: 0
   damage: 0
   bounty: 1
-  enemyDamage: 0
+  enemyDamage: 1
   enemyDown: 0
   mainManager: {fileID: 0}
   healthbar: {fileID: 917996040}

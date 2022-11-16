@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
@@ -10,10 +11,14 @@ public class UI : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI waveText;
     public TextMeshProUGUI livesText;
+    public TextMeshProUGUI costNormalTowerText;
+    public TextMeshProUGUI wavesSurvivedText;
 
     public int moneyUI;
     public int waveUI;
     public int livesUI;
+
+    public int baseCostNormalTowerUi;
 
     public bool normalTowerClicked = false;
 
@@ -26,6 +31,11 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (mainManager.GetComponent<MainManager>().gameIsActive == false)
+        {
+            transform.Find("Game Over Context").gameObject.SetActive(true);
+        }
+
         moneyUI = mainManager.GetComponent<MainManager>().money;
         moneyText.text = "Money: " + moneyUI;
 
@@ -35,6 +45,11 @@ public class UI : MonoBehaviour
         livesUI = mainManager.GetComponent<MainManager>().live;
         livesText.text = "Lives: " + livesUI;
 
+        baseCostNormalTowerUi = mainManager.GetComponent<MainManager>().baseCostNormalTower;
+        costNormalTowerText.text = "Cost: " + baseCostNormalTowerUi;
+
+        waveUI = mainManager.GetComponent<MainManager>().wave;
+        wavesSurvivedText.text = "Waves survived: " + (waveUI - 1);
     }
 
     public void StartWaveClicked()
@@ -55,6 +70,11 @@ public class UI : MonoBehaviour
             mainManager.GetComponent<MainManager>().GhostTower();
         }
 
+    }
+
+    public void tryAgainClicked()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

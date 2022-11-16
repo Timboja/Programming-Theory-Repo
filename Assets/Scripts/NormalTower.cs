@@ -21,7 +21,7 @@ public class NormalTower : Tower
         enemyLocked = detectionSphere.GetComponent<EnemyDetection>().enemyLocked;
         enemyTransform = detectionSphere.GetComponent<EnemyDetection>().enemyTransform;
 
-        if (enemyLocked == true)
+        if (enemyLocked == true && mainManager.GetComponent<MainManager>().gameIsActive == true)
         {
 
             LockEnemy();
@@ -39,8 +39,9 @@ public class NormalTower : Tower
     IEnumerator Attack()
     {
 
-        yield return new WaitForSeconds(attackSpeed);
+
         Instantiate(bullet, transform.Find("Sphere").position, transform.Find("Sphere").rotation);
+        yield return new WaitForSeconds(attackSpeed);
         attackCoRunning = false;
 
     }

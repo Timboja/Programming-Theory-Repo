@@ -14,6 +14,8 @@ public class Tower : MonoBehaviour
 
     public int upgradeCost;
     public float upgradeCostModifier;
+    public int level;
+    public int maxLevel;
 
     public bool enemyLocked = false;
 
@@ -36,6 +38,32 @@ public class Tower : MonoBehaviour
     {
         //Updates the range of the tower
         detectionSphere.transform.localScale = new Vector3(range, range, range);
+    }
+
+    public void UpgradeTower()
+    {
+        if (mainManager.GetComponent<MainManager>().money >= ((upgradeCost + level) * upgradeCostModifier))
+        {
+ 
+            if (level < maxLevel)
+            {
+                mainManager.GetComponent<MainManager>().money -= Mathf.RoundToInt((upgradeCost + level) * upgradeCostModifier);
+                level++;
+
+                range += 0.2F;
+                attackSpeed -= 0.1F;
+                attackDamage = Mathf.RoundToInt(attackDamage + (level / 2));
+            }
+            else
+            {
+                Debug.Log("Max Level!");
+            }
+        }
+        else
+        {
+            Debug.Log("Noot enough Money!");
+        }
+
     }
 
 }
