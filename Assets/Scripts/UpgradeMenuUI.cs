@@ -35,7 +35,7 @@ public class UpgradeMenuUI : MonoBehaviour
         mainManager = GameObject.FindGameObjectWithTag("MainManager");
 
         towerScript.GetComponent<NormalTower>();
-        towerNameText.text = towerScript.GetComponent<NormalTower>().towerName;
+        towerNameText.text = towerScript.GetComponent<Tower>().towerName;
 
         //UI out of bounds check
 
@@ -53,27 +53,39 @@ public class UpgradeMenuUI : MonoBehaviour
     void Update()
     {
 
-        towerNameText.text = towerScript.GetComponent<NormalTower>().towerName;
+        towerNameText.text = towerScript.GetComponent<Tower>().towerName;
 
-        attackDamageUi = towerScript.GetComponent<NormalTower>().attackDamage;
+        attackDamageUi = towerScript.GetComponent<Tower>().attackDamage;
         attackDamageText.text = "Attack Damage: " + attackDamageUi;
 
-        attackSpeedUi = towerScript.GetComponent<NormalTower>().attackSpeed;
+        attackSpeedUi = towerScript.GetComponent<Tower>().attackSpeed;
         attackSpeedText.text = "Attack Speed: " + attackSpeedUi;
 
-        attackRangeUi = towerScript.GetComponent<NormalTower>().range;
+        attackRangeUi = towerScript.GetComponent<Tower>().range;
         attackRangeText.text = "Attack Range: " + attackRangeUi;
 
-        costUi = towerScript.GetComponent<NormalTower>().upgradeCost;
+        costUi = towerScript.GetComponent<Tower>().upgradeCost;
         costText.text = "Upgrade Cost: " + costUi;
 
-        levelUi = towerScript.GetComponent<NormalTower>().level;
+        levelUi = towerScript.GetComponent<Tower>().level;
         levelText.text = "Level: " + levelUi;
 
     }
 
     public void UpgradeClicked()
     {
-        towerScript.GetComponent<Tower>().UpgradeTower();
+        if (towerScript.GetComponent<Tower>().towerName == "Normal Tower")
+        {
+            towerScript.GetComponent<Tower>().UpgradeTowerNormal();
+        }
+        else if (towerScript.GetComponent<Tower>().towerName == "Freeze Tower")
+        {
+            towerScript.GetComponent<Tower>().UpgradeTowerFreeze();
+        }
+        else if (towerScript.GetComponent<Tower>().towerName == "Toxic Tower")
+        {
+            towerScript.GetComponent<Tower>().UpgradeTowerToxic();
+        }
+
     }
 }

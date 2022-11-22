@@ -14,12 +14,21 @@ public class MainManager : MonoBehaviour
     public float baseRangeNormalTower;
     public int baseCostNormalTower;
 
-    public int normalEnemysToSpawn;
+    public float baseRangeFreezeTower;
+    public int baseCostFreezeTower;
+
+    public float baseRangeToxicTower;
+    public int baseCostToxicTower;
 
     public GameObject spawnerObject;
     public GameObject startButton;
     public GameObject ghostTower;
+    public GameObject ghostFreezeTower;
+    public GameObject ghostToxicTower;
+    public GameObject ui;
 
+    public bool win;
+    private bool finalWave;
     public bool gameIsActive = true;
     public bool waveRunning;
     public bool enemyOnField;
@@ -28,11 +37,14 @@ public class MainManager : MonoBehaviour
     void Start()
     {
         spawnerObject.GetComponent<Spawner>();
+        ui.GetComponent<UI>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Checks game states
+
         if (live <= 0)
         {
             gameIsActive = false;
@@ -45,7 +57,16 @@ public class MainManager : MonoBehaviour
             if (!spawnerObject.GetComponent<Spawner>().enemysSpawing && !enemyOnField)
             {
                 waveRunning = false;
-                startButton.SetActive(true);
+
+                if (!finalWave)
+                {
+                    startButton.SetActive(true);
+                }
+                if (finalWave)
+                {
+                    gameIsActive = false;
+                    win = true;
+                }
             }
         }
 
@@ -59,10 +80,12 @@ public class MainManager : MonoBehaviour
             startButton.SetActive(false);
             wave++;
 
-            normalEnemysToSpawn = Mathf.RoundToInt(((normalEnemysToSpawn + startEnemys) * wave) / 2 + difficultModifer);
-            Debug.Log("normalEnemysToSpawn: " + normalEnemysToSpawn);
+            if (wave == 10)
+            {
+                finalWave = true;
+            }
 
-            spawnerObject.GetComponent<Spawner>().SpawnWave(normalEnemysToSpawn);
+            spawnerObject.GetComponent<Spawner>().SpawnWave(wave);
         }
 
     }
@@ -71,7 +94,18 @@ public class MainManager : MonoBehaviour
     {
         if (gameIsActive)
         {
-            Instantiate(ghostTower, transform.position, transform.rotation);
+            if (ui.GetComponent<UI>().normalTowerClicked)
+            {
+                Instantiate(ghostTower, transform.position, transform.rotation);
+            }
+            else if (ui.GetComponent<UI>().freezeTowerClicked)
+            {
+                Instantiate(ghostFreezeTower, transform.position, transform.rotation);
+            }
+            else if (ui.GetComponent<UI>().toxicTowerClicked)
+            {
+                Instantiate(ghostToxicTower, transform.position, transform.rotation);
+            }
         }
 
     }
@@ -83,18 +117,15 @@ public class MainManager : MonoBehaviour
 
         if (GameObject.Find("Enemy Normal(Clone)") == null)
         {
-            Debug.Log("No enemy on field");
             enemysOnField = false;
         }
         else
         {
-            Debug.Log("Enemy on field");
             enemysOnField = true;
         }
 
         return enemysOnField;
 
     }
-
 
 }

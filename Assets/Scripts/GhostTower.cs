@@ -22,7 +22,19 @@ public class GhostTower : MonoBehaviour
 
         ui = GameObject.FindGameObjectWithTag("UI");
         mainManager = GameObject.FindGameObjectWithTag("MainManager");
-        rangeGhostTower = mainManager.GetComponent<MainManager>().baseRangeNormalTower;
+
+        if (ui.GetComponent<UI>().normalTowerClicked)
+        {
+            rangeGhostTower = mainManager.GetComponent<MainManager>().baseRangeNormalTower;
+        }
+        if (ui.GetComponent<UI>().freezeTowerClicked)
+        {
+            rangeGhostTower = mainManager.GetComponent<MainManager>().baseRangeFreezeTower;
+        }
+        if (ui.GetComponent<UI>().toxicTowerClicked)
+        {
+            rangeGhostTower = mainManager.GetComponent<MainManager>().baseRangeToxicTower;
+        }
 
         detectionSphere.transform.localScale = new Vector3(rangeGhostTower, rangeGhostTower, rangeGhostTower);
     }
@@ -41,7 +53,7 @@ public class GhostTower : MonoBehaviour
 
         //If rightclick is released destroy the object.
 
-        if (!ui.GetComponent<UI>().normalTowerClicked && Input.GetMouseButtonUp(1))
+        if (!ui.GetComponent<UI>().normalTowerClicked && Input.GetMouseButtonUp(1) || !ui.GetComponent<UI>().freezeTowerClicked && Input.GetMouseButtonUp(1))
         {
             Destroy(gameObject);
         }

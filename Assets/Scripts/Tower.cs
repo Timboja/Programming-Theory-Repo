@@ -40,7 +40,7 @@ public class Tower : MonoBehaviour
         detectionSphere.transform.localScale = new Vector3(range, range, range);
     }
 
-    public void UpgradeTower()
+    public void UpgradeTowerNormal()
     {
         if (mainManager.GetComponent<MainManager>().money >= ((upgradeCost + level) * upgradeCostModifier))
         {
@@ -58,6 +58,59 @@ public class Tower : MonoBehaviour
             {
                 Debug.Log("Max Level!");
             }
+        }
+        else
+        {
+            Debug.Log("Noot enough Money!");
+        }
+
+    }
+
+    public void UpgradeTowerFreeze()
+    {
+        if (mainManager.GetComponent<MainManager>().money >= ((upgradeCost + level) * upgradeCostModifier))
+        {
+
+            if (level < maxLevel)
+            {
+                mainManager.GetComponent<MainManager>().money -= Mathf.RoundToInt((upgradeCost + level) * upgradeCostModifier);
+                level++;
+
+                range += 0.1F;
+                attackSpeed -= 0.2F;
+                attackDamage = Mathf.RoundToInt(attackDamage + (level / 2));
+            }
+            else
+            {
+                Debug.Log("Max Level!");
+            }
+        }
+        else
+        {
+            Debug.Log("Noot enough Money!");
+        }
+
+    }
+
+    public void UpgradeTowerToxic()
+    {
+        if (mainManager.GetComponent<MainManager>().money >= ((upgradeCost + level) * upgradeCostModifier))
+        {
+
+            if (level < maxLevel)
+            {
+                mainManager.GetComponent<MainManager>().money -= Mathf.RoundToInt((upgradeCost + level) * upgradeCostModifier);
+                level++;
+
+                range += 0.1F;
+                attackSpeed -= 0.2F;
+                attackDamage = Mathf.RoundToInt(attackDamage + (level / 2));
+            }
+            else
+            {
+                Debug.Log("Max Level!");
+            }
+
         }
         else
         {

@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletBehavior : MonoBehaviour 
+public class BulletFreezeBehavior : MonoBehaviour
 {
     public float firingSpeed;
     public Rigidbody bulletRb;
     public float outOfBoundsZ = 20;
     public float outOfBoundsX = 25;
     public int attackDamageBullet;
+
+    public float freezeStrenghtBullet;
+    public float toxicSpeedBullet;
+    public int toxicTicksBullet;
 
     private bool bulletInFlight;
     private bool coRunning;
@@ -49,12 +53,14 @@ public class BulletBehavior : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Turret" && !bulletInFlight)
+        if (other.gameObject.tag == "Freeze Tower" && !bulletInFlight)
         {
             attackDamageBullet = other.GetComponent<Tower>().attackDamage;
+            freezeStrenghtBullet = other.GetComponent<FreezeTower>().freezeStrength;
 
             bulletInFlight = true;
         }
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -65,7 +71,7 @@ public class BulletBehavior : MonoBehaviour
 
             //Delay on hit => otherwise no physic collition
 
-            if(!coRunning)
+            if (!coRunning)
             {
 
                 StartCoroutine(Wait());

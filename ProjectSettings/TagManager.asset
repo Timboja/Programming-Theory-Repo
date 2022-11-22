@@ -14,8 +14,13 @@ TagManager:
   - Tower Image
   - UI
   - Turret Base
-  - Turret
   - Detection Sphere
+  - Spawnlings
+  - Normal Tower
+  - Freeze Tower
+  - BulletFreezeTower
+  - Toxic Tower
+  - BulletToxicTower
   layers:
   - Default
   - TransparentFX

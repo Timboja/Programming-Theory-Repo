@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1009016236213877678
+--- !u!1001 &6100193084798816063
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,19 +9,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1864909140, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
       propertyPath: m_Speed
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1864909140, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
-      propertyPath: m_Radius
-      value: 0.3
+      propertyPath: m_Acceleration
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 49247962076093163, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ee21e705cab95464babd3449c8b35d79, type: 2}
+    - target: {fileID: 1153111962274387741, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153111962274387741, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153111962274387741, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1299699502451427204, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
       propertyPath: m_Name
-      value: Enemy Boss
+      value: Enemy Spawnling
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299699502451427204, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1587592428649302404, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -29,47 +41,43 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ee21e705cab95464babd3449c8b35d79, type: 2}
     - target: {fileID: 2764821656539906912, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
       propertyPath: m_Mass
-      value: 20
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4241213253183295553, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
       propertyPath: bounty
-      value: 50
+      value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4241213253183295553, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
+      propertyPath: fastEnemy
+      value: 
+      objectReference: {fileID: 1118034676747014783, guid: 63d2464c293dd406bbd96de0342ed862, type: 3}
     - target: {fileID: 4241213253183295553, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
       propertyPath: maxHealth
-      value: 300
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 4241213253183295553, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
+      propertyPath: spawnlings
+      value: 
+      objectReference: {fileID: 1118034676747014783, guid: 63d2464c293dd406bbd96de0342ed862, type: 3}
+    - target: {fileID: 4241213253183295553, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
       propertyPath: enemyDamage
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7946360633692538757, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7946360633692538757, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7946360633692538757, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7946360633692538757, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7946360633692538757, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.226331
+      value: -14.826662
       objectReference: {fileID: 0}
     - target: {fileID: 7946360633692538757, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9999995
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7946360633692538757, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.71665955
+      value: -0.6409111
       objectReference: {fileID: 0}
     - target: {fileID: 7946360633692538757, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -99,5 +107,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4241213253183295553, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
+--- !u!1 &5089428793981192379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1299699502451427204, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
+  m_PrefabInstance: {fileID: 6100193084798816063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6100193085156609335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 917996040, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
+  m_PrefabInstance: {fileID: 6100193084798816063}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96495e13f55d449a08494d0c955443d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2405724626737208105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089428793981192379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702dc2a557ec4474d85585c24b589df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 80
+  currentHealth: 0
+  damage: 0
+  bounty: 12
+  enemyDamage: 6
+  enemyDown: 0
+  mainManager: {fileID: 0}
+  healthbar: {fileID: 6100193085156609335}
+  spawnlings: {fileID: 1118034676747014783, guid: 63d2464c293dd406bbd96de0342ed862, type: 3}
+  spawnlingsToHatch: 6

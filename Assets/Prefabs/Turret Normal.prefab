@@ -1384,7 +1384,6 @@ GameObject:
   - component: {fileID: 4171211196770962276}
   - component: {fileID: 2095662474}
   - component: {fileID: 2095662473}
-  - component: {fileID: 8012156152286837508}
   m_Layer: 7
   m_Name: Detection Sphere
   m_TagString: Untagged
@@ -1500,22 +1499,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8012156152286837508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3441576172889994912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9012691493d40189530d2fe6aaefab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyTransform: {fileID: 0}
-  enemyCurrent: {fileID: 0}
-  enemyNext: {fileID: 0}
-  enemyLocked: 0
 --- !u!1 &3850530347784786875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,7 +1646,7 @@ GameObject:
   - component: {fileID: 1399312923}
   m_Layer: 0
   m_Name: Turret Normal
-  m_TagString: Turret
+  m_TagString: Normal Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

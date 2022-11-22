@@ -29,8 +29,6 @@ public class EnemyDetection : MonoBehaviour
             enemyCurrent = other.gameObject;
             enemyTransform = enemyCurrent.gameObject.transform;
 
-            //enemyCurrent.tag = "EnemyCurrent";
-
             //Sets the lock for the tower used in Tower.cs
 
             enemyLocked = true;
@@ -42,7 +40,6 @@ public class EnemyDetection : MonoBehaviour
         else if (other.gameObject.tag == "Enemy" && enemyCurrent != null)
         {
             enemyNext = other.gameObject;
-            //enemyNext.tag = "EnemyNext";
 
         }
         
@@ -67,7 +64,6 @@ public class EnemyDetection : MonoBehaviour
                 enemyNext = null;
                 enemyTransform = enemyCurrent.gameObject.transform;
 
-                //enemyCurrent.tag = "EnemyCurrent";
 
                 enemyLocked = true;
 
