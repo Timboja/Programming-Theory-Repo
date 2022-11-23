@@ -21,6 +21,7 @@ TagManager:
   - BulletFreezeTower
   - Toxic Tower
   - BulletToxicTower
+  - Player Controller
   layers:
   - Default
   - TransparentFX

@@ -86,6 +86,7 @@ public class Tower : MonoBehaviour
                 range += 0.1F;
                 attackSpeed -= 0.2F;
                 attackDamage = Mathf.RoundToInt(attackDamage + (level / 2));
+
             }
             else
             {

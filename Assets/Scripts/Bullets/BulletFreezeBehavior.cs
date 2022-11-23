@@ -11,8 +11,6 @@ public class BulletFreezeBehavior : MonoBehaviour
     public int attackDamageBullet;
 
     public float freezeStrenghtBullet;
-    public float toxicSpeedBullet;
-    public int toxicTicksBullet;
 
     private bool bulletInFlight;
     private bool coRunning;

@@ -122,4 +122,11 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void ExitButton()
+    {
+        currentUpgradeMenu.transform.Find("Upgrade Menu").gameObject.SetActive(false);
+        currentUpgradeMenu.transform.Find("Detection Sphere").GetComponent<MeshRenderer>().enabled = false;
+        currentUpgradeMenu = null;
+    }
 }

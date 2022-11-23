@@ -82,6 +82,7 @@ public class BulletBehavior : MonoBehaviour
     }
     IEnumerator Wait()
     {
+
         coRunning = true;
 
         yield return new WaitForSeconds(destroyDelay);
