@@ -12,10 +12,14 @@ public class UI : MonoBehaviour
     public TextMeshProUGUI waveText;
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI wavesSurvivedText;
+    public TextMeshProUGUI notEnoughMoneyText;
 
     public TextMeshProUGUI costNormalTowerText;
     public TextMeshProUGUI costFreezeTowerText;
     public TextMeshProUGUI costToxicTowerText;
+
+    public GameObject infoText;
+    public bool noteEnoughMoney;
 
     public int moneyUI;
     public int waveUI;
@@ -29,9 +33,14 @@ public class UI : MonoBehaviour
     public bool freezeTowerClicked = false;
     public bool toxicTowerClicked = false;
 
+    private float infoDelay = 2F;
+    public bool waitCoRunning;
+
     // Start is called before the first frame update
     void Start()
     {
+
+
         mainManager.GetComponent<MainManager>();
 
         baseCostNormalTowerUi = mainManager.GetComponent<MainManager>().baseCostNormalTower;
@@ -53,6 +62,7 @@ public class UI : MonoBehaviour
         {
             transform.Find("Game Over Context").gameObject.SetActive(true);
         }
+
         if (mainManager.GetComponent<MainManager>().win)
         {
             transform.Find("Win Context").gameObject.SetActive(true);
@@ -119,4 +129,38 @@ public class UI : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void notEnoughMoney()
+    {
+        if (!waitCoRunning)
+        {
+            transform.Find("InfoText").gameObject.SetActive(true);
+            notEnoughMoneyText.text = "Not enough money!";
+
+            StartCoroutine(Wait());
+
+        }
+
+    }
+
+    public void maxLevel()
+    {
+        if (!waitCoRunning)
+        {
+            transform.Find("InfoText").gameObject.SetActive(true);
+            notEnoughMoneyText.text = "Max Level!";
+
+            StartCoroutine(Wait());
+
+        }
+
+    }
+
+    IEnumerator Wait()
+    {
+        waitCoRunning = true;
+
+        yield return new WaitForSeconds(infoDelay);
+        transform.Find("InfoText").gameObject.SetActive(false);
+        waitCoRunning = false;
+    }
 }

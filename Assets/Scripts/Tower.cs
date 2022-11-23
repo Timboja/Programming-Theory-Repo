@@ -26,6 +26,13 @@ public class Tower : MonoBehaviour
     public GameObject detectionSphere;
     public GameObject bullet;
     public GameObject mainManager;
+    public GameObject uI;
+
+    public void Start()
+    {
+        mainManager = GameObject.FindGameObjectWithTag("MainManager");
+        uI = GameObject.FindGameObjectWithTag("UI");
+    }
 
     public void LockEnemy()
     {
@@ -56,12 +63,12 @@ public class Tower : MonoBehaviour
             }
             else
             {
-                Debug.Log("Max Level!");
+                uI.GetComponent<UI>().maxLevel();
             }
         }
         else
         {
-            Debug.Log("Noot enough Money!");
+            uI.GetComponent<UI>().notEnoughMoney();
         }
 
     }
@@ -82,12 +89,12 @@ public class Tower : MonoBehaviour
             }
             else
             {
-                Debug.Log("Max Level!");
+                uI.GetComponent<UI>().maxLevel();
             }
         }
         else
         {
-            Debug.Log("Noot enough Money!");
+            uI.GetComponent<UI>().notEnoughMoney();
         }
 
     }
@@ -108,13 +115,13 @@ public class Tower : MonoBehaviour
             }
             else
             {
-                Debug.Log("Max Level!");
+                uI.GetComponent<UI>().maxLevel();
             }
 
         }
         else
         {
-            Debug.Log("Noot enough Money!");
+            uI.GetComponent<UI>().notEnoughMoney();
         }
 
     }

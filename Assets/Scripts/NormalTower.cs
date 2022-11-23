@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class NormalTower : Tower
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-        //Script reference
-        mainManager = GameObject.FindGameObjectWithTag("MainManager");
-
-    }
 
     // Update is called once per frame
     void Update()

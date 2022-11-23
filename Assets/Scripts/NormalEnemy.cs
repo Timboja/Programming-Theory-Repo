@@ -13,6 +13,15 @@ public class NormalEnemy : Enemy
         healthbar.SetMaxHealth(maxHealth);
     }
 
+    private void Update()
+    {
+        if (currentHealth != maxHealth && !hasDamage)
+        {
+            hasDamage = true;
+            healthbarCanvas.SetActive(true);
+        }
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "BulletNormalTower")

@@ -115,6 +115,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1299699502451427204, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
   m_PrefabInstance: {fileID: 6100193084798816063}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6100193084564522687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 309922176, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
+  m_PrefabInstance: {fileID: 6100193084798816063}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6100193085156609335 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 917996040, guid: e6c1cdbe811634178ad60bbfede5dc1b, type: 3}
@@ -143,8 +148,14 @@ MonoBehaviour:
   damage: 0
   bounty: 12
   enemyDamage: 6
+  freeze: 0
+  toxicDamage: 0
+  toxicTicks: 0
+  toxicSpeed: 0
   enemyDown: 0
+  hasDamage: 0
   mainManager: {fileID: 0}
   healthbar: {fileID: 6100193085156609335}
+  healthbarCanvas: {fileID: 6100193084564522687}
   spawnlings: {fileID: 1118034676747014783, guid: 63d2464c293dd406bbd96de0342ed862, type: 3}
   spawnlingsToHatch: 6

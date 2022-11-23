@@ -19,15 +19,12 @@ public class Enemy : MonoBehaviour
     public float toxicSpeed;
 
     public bool enemyDown;
+    public bool hasDamage;
 
     public GameObject mainManager;
     public HealthBar healthbar;
+    public GameObject healthbarCanvas;
     public GameObject spawnlings;
-
-    private void Start()
-    {
-
-    }
 
     public void TakeDamage(int damage)
     {
@@ -80,6 +77,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeFreeze(float freeze)
     {
+
         if (GetComponent<NavMeshAgent>().speed > 0.6)
         {
             GetComponent<NavMeshAgent>().speed -= freeze;
@@ -106,7 +104,6 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(toxicSpeed);
             TakeDamage(toxicDamage);
         }
-
 
     }
 }
