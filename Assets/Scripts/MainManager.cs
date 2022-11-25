@@ -20,11 +20,17 @@ public class MainManager : MonoBehaviour
     public float baseRangeToxicTower;
     public int baseCostToxicTower;
 
+    public int baseCostBombs;
+
+    public int costRemoveRockBig;
+    public int costRemoveRocksmall;
+
     public GameObject spawnerObject;
     public GameObject startButton;
     public GameObject ghostTower;
     public GameObject ghostFreezeTower;
     public GameObject ghostToxicTower;
+    public GameObject ghostBombs;
     public GameObject ui;
 
     public bool win;
@@ -105,6 +111,10 @@ public class MainManager : MonoBehaviour
             else if (ui.GetComponent<UI>().toxicTowerClicked)
             {
                 Instantiate(ghostToxicTower, transform.position, transform.rotation);
+            }
+            else if (ui.GetComponent<UI>().bombsClicked)
+            {
+                Instantiate(ghostBombs, transform.position, transform.rotation);
             }
         }
 

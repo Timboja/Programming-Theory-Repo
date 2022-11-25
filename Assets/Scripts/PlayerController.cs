@@ -8,12 +8,14 @@ public class PlayerController : MonoBehaviour
     public GameObject normalTower;
     public GameObject freezeTower;
     public GameObject toxicTower;
-    public GameObject spikes;
+    public GameObject bombs;
     public GameObject currentUpgradeMenu;
     public GameObject ui;
     public GameObject mainManager;
 
     public LayerMask noSphere;
+
+    public float bombsYoffset;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +52,7 @@ public class PlayerController : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("Not enough Money!");
+                        ui.GetComponent<UI>().notEnoughMoney();
                     }
 
                 }
@@ -65,7 +67,7 @@ public class PlayerController : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("Not enough Money!");
+                        ui.GetComponent<UI>().notEnoughMoney();
                     }
 
                 }
@@ -80,24 +82,48 @@ public class PlayerController : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("Not enough Money!");
+                        ui.GetComponent<UI>().notEnoughMoney();
+                    }
+
+                }
+                else if (raycasthit.transform.CompareTag("Road") && ui.GetComponent<UI>().bombsClicked)
+                {
+                    //Cecks if theres enough Money to build a tower
+
+                    if (mainManager.GetComponent<MainManager>().money >= mainManager.GetComponent<MainManager>().baseCostBombs)
+                    {
+                        Instantiate(bombs, raycasthit.point + new Vector3(0,bombsYoffset,0), transform.rotation);
+                        mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostBombs;
+                    }
+                    else
+                    {
+                        ui.GetComponent<UI>().notEnoughMoney();
                     }
 
                 }
 
-                if (raycasthit.transform.CompareTag("Normal Tower") || raycasthit.transform.CompareTag("Freeze Tower") || raycasthit.transform.CompareTag("Toxic Tower"))
+                if (raycasthit.transform.CompareTag("Normal Tower") || raycasthit.transform.CompareTag("Freeze Tower") || raycasthit.transform.CompareTag("Toxic Tower") || raycasthit.transform.CompareTag("Rocks"))
                 {
                     //Checks if theres a differnt upgrade menu open => closes it
                     if (currentUpgradeMenu != null)
                     {
                         currentUpgradeMenu.transform.Find("Upgrade Menu").gameObject.SetActive(false);
-                        currentUpgradeMenu.transform.Find("Detection Sphere").GetComponent<MeshRenderer>().enabled = false;
+
+                        if (!raycasthit.transform.CompareTag("Rocks") && !currentUpgradeMenu.transform.CompareTag("Rocks"))
+                        {
+                            currentUpgradeMenu.transform.Find("Detection Sphere").GetComponent<MeshRenderer>().enabled = false;
+                        }
+
                         currentUpgradeMenu = null;
                     }
 
                     currentUpgradeMenu = raycasthit.transform.gameObject;
                     currentUpgradeMenu.transform.Find("Upgrade Menu").gameObject.SetActive(true);
-                    currentUpgradeMenu.transform.Find("Detection Sphere").GetComponent<MeshRenderer>().enabled = true;
+                    if (!raycasthit.transform.CompareTag("Rocks"))
+                    {
+                        currentUpgradeMenu.transform.Find("Detection Sphere").GetComponent<MeshRenderer>().enabled = true;
+                    }
+
 
                 }
             }
@@ -117,7 +143,12 @@ public class PlayerController : MonoBehaviour
             if (currentUpgradeMenu != null)
             {
                 currentUpgradeMenu.transform.Find("Upgrade Menu").gameObject.SetActive(false);
-                currentUpgradeMenu.transform.Find("Detection Sphere").GetComponent<MeshRenderer>().enabled = false;
+
+                if (!currentUpgradeMenu.transform.CompareTag("Rocks"))
+                {
+                    currentUpgradeMenu.transform.Find("Detection Sphere").GetComponent<MeshRenderer>().enabled = false;
+                }
+
                 currentUpgradeMenu = null;
             }
         }

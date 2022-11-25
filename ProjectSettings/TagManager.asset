@@ -22,6 +22,9 @@ TagManager:
   - Toxic Tower
   - BulletToxicTower
   - Player Controller
+  - Bomb
+  - Road
+  - Rocks
   layers:
   - Default
   - TransparentFX
@@ -31,8 +34,8 @@ TagManager:
   - UI
   - Enemy
   - Detection Sphere
-  - 
-  - 
+  - Roads
+  - Cliffs
   - 
   - 
   - 

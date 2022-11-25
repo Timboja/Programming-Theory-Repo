@@ -17,6 +17,7 @@ public class UI : MonoBehaviour
     public TextMeshProUGUI costNormalTowerText;
     public TextMeshProUGUI costFreezeTowerText;
     public TextMeshProUGUI costToxicTowerText;
+    public TextMeshProUGUI costBombsText;
 
     public GameObject infoText;
     public bool noteEnoughMoney;
@@ -28,10 +29,12 @@ public class UI : MonoBehaviour
     public int baseCostNormalTowerUi;
     public int baseCostFreezeTowerUi;
     public int baseCostToxicTowerUi;
+    public int baseCostBombsUi;
 
     public bool normalTowerClicked = false;
     public bool freezeTowerClicked = false;
     public bool toxicTowerClicked = false;
+    public bool bombsClicked = false;
 
     private float infoDelay = 2F;
     public bool waitCoRunning;
@@ -51,6 +54,9 @@ public class UI : MonoBehaviour
 
         baseCostToxicTowerUi = mainManager.GetComponent<MainManager>().baseCostToxicTower;
         costToxicTowerText.text = "Cost: " + baseCostToxicTowerUi;
+
+        baseCostBombsUi = mainManager.GetComponent<MainManager>().baseCostBombs;
+        costBombsText.text = "Cost: " + baseCostBombsUi;
     }
 
     // Update is called once per frame
@@ -95,6 +101,7 @@ public class UI : MonoBehaviour
             normalTowerClicked = true;
             freezeTowerClicked = false;
             toxicTowerClicked = false;
+            bombsClicked = false;
 
             mainManager.GetComponent<MainManager>().GhostTower();
         }
@@ -107,6 +114,7 @@ public class UI : MonoBehaviour
             freezeTowerClicked = true;
             normalTowerClicked = false;
             toxicTowerClicked = false;
+            bombsClicked = false;
 
             mainManager.GetComponent<MainManager>().GhostTower();
         }
@@ -119,6 +127,20 @@ public class UI : MonoBehaviour
             toxicTowerClicked = true;
             normalTowerClicked = false;
             freezeTowerClicked = false;
+            bombsClicked = false;
+
+            mainManager.GetComponent<MainManager>().GhostTower();
+        }
+    }
+
+    public void BombsClicked()
+    {
+        if (!bombsClicked)
+        {
+            bombsClicked = true;
+            normalTowerClicked = false;
+            freezeTowerClicked = false;
+            toxicTowerClicked = false;
 
             mainManager.GetComponent<MainManager>().GhostTower();
         }

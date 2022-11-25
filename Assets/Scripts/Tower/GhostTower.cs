@@ -36,7 +36,13 @@ public class GhostTower : MonoBehaviour
             rangeGhostTower = mainManager.GetComponent<MainManager>().baseRangeToxicTower;
         }
 
-        detectionSphere.transform.localScale = new Vector3(rangeGhostTower, rangeGhostTower, rangeGhostTower);
+        //Prevent bombs from acessing the detection sphere => they dont have it
+
+        if (!ui.GetComponent<UI>().bombsClicked)
+        {
+            detectionSphere.transform.localScale = new Vector3(rangeGhostTower, rangeGhostTower, rangeGhostTower);
+        }
+
     }
 
 
