@@ -35,7 +35,7 @@ public class ToxicTower : Tower
     IEnumerator Attack()
     {
 
-        Instantiate(bullet, transform.Find("Sphere").position, transform.Find("Sphere").rotation);
+        Instantiate(bullet, turret.transform.position, turret.transform.rotation);
         yield return new WaitForSeconds(attackSpeed);
         attackCoRunning = false;
 

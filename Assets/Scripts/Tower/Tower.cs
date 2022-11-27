@@ -27,6 +27,7 @@ public class Tower : MonoBehaviour
     public GameObject bullet;
     public GameObject mainManager;
     public GameObject uI;
+    public GameObject turret;
 
     public void Start()
     {
@@ -36,8 +37,21 @@ public class Tower : MonoBehaviour
 
     public void LockEnemy()
     {
+        /*
+        var relativePosition = turret.transform.InverseTransformDirection(enemyTransform.position);
 
-        transform.Find("Sphere").LookAt(enemyTransform,Vector3.back);
+        relativePosition.y = 0;
+
+        var targetPosition = turret.transform.TransformPoint(relativePosition);
+
+        turret.transform.LookAt(targetPosition, turret.transform.up);
+        */
+
+        //Vector3 targetPosition = new Vector3(enemyTransform.position.x, enemyTransform.position.y, enemyTransform.position.z);
+
+        turret.transform.LookAt(enemyTransform);
+
+
 
     }
 
