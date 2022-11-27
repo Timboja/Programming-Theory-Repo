@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public GameObject ui;
     public GameObject mainManager;
 
+    public Vector3 basePosition;
+
     public LayerMask noSphere;
 
     public float bombsYoffset;
@@ -43,11 +45,16 @@ public class PlayerController : MonoBehaviour
 
                 if (raycasthit.transform.CompareTag("Turret Base") && ui.GetComponent<UI>().normalTowerClicked)
                 {
-                    //Cecks if theres enough Money to buiild a tower
+                    //Cecks if theres enough Money to build a tower
 
                     if (mainManager.GetComponent<MainManager>().money >= mainManager.GetComponent<MainManager>().baseCostNormalTower)
                     {
-                        Instantiate(normalTower, raycasthit.point, transform.rotation);
+                        //Deletes the Turret Base and places the tower on the position
+
+                        basePosition = raycasthit.transform.position;
+                        Destroy(raycasthit.transform.gameObject);
+
+                        Instantiate(normalTower, basePosition, transform.rotation);
                         mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostNormalTower;
                     }
                     else
@@ -62,7 +69,13 @@ public class PlayerController : MonoBehaviour
 
                     if (mainManager.GetComponent<MainManager>().money >= mainManager.GetComponent<MainManager>().baseCostFreezeTower)
                     {
-                        Instantiate(freezeTower, raycasthit.point, transform.rotation);
+
+                        //Deletes the Turret Base and places the tower on the position
+
+                        basePosition = raycasthit.transform.position;
+                        Destroy(raycasthit.transform.gameObject);
+
+                        Instantiate(freezeTower, basePosition, transform.rotation);
                         mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostFreezeTower;
                     }
                     else
@@ -77,7 +90,13 @@ public class PlayerController : MonoBehaviour
 
                     if (mainManager.GetComponent<MainManager>().money >= mainManager.GetComponent<MainManager>().baseCostToxicTower)
                     {
-                        Instantiate(toxicTower, raycasthit.point, transform.rotation);
+
+                        //Deletes the Turret Base and places the tower on the position
+
+                        basePosition = raycasthit.transform.position;
+                        Destroy(raycasthit.transform.gameObject);
+
+                        Instantiate(toxicTower, basePosition, transform.rotation);
                         mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostToxicTower;
                     }
                     else
