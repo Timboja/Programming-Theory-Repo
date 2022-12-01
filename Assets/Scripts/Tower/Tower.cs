@@ -12,7 +12,11 @@ public class Tower : MonoBehaviour
     public string towerName;
     public int kills;
 
-    public int upgradeCost;
+    public int upgradeCostNormal;
+    public int upgradeCostFreeze;
+    public int upgradeCostToxic;
+
+    public int upgradeBaseCost;
     public float upgradeCostModifier;
     public int level;
     public int maxLevel;
@@ -31,27 +35,41 @@ public class Tower : MonoBehaviour
 
     public void Start()
     {
+
         mainManager = GameObject.FindGameObjectWithTag("MainManager");
         uI = GameObject.FindGameObjectWithTag("UI");
+
+        CalcUpgradeCost(towerName);
+
+    }
+
+    //Calculates the next upgrade costs for active tower
+
+    public void CalcUpgradeCost(string towerName)
+    {
+        if (towerName == "Normal Tower")
+        {
+            upgradeCostNormal = Mathf.RoundToInt((mainManager.GetComponent<MainManager>().baseCostNormalTower + level) * upgradeCostModifier);
+        }
+        else if (towerName == "Freeze Tower")
+        {
+            upgradeCostFreeze = Mathf.RoundToInt((mainManager.GetComponent<MainManager>().baseCostFreezeTower + level) * upgradeCostModifier);
+        }
+        else if (towerName == "Toxic Tower")
+        {
+            upgradeCostToxic = Mathf.RoundToInt((mainManager.GetComponent<MainManager>().baseCostToxicTower + level) * upgradeCostModifier);
+        }
+        else
+        {
+            Debug.Log("Wrong or empty Towername variable");
+        }
+
     }
 
     public void LockEnemy()
     {
-        /*
-        var relativePosition = turret.transform.InverseTransformDirection(enemyTransform.position);
-
-        relativePosition.y = 0;
-
-        var targetPosition = turret.transform.TransformPoint(relativePosition);
-
-        turret.transform.LookAt(targetPosition, turret.transform.up);
-        */
-
-        //Vector3 targetPosition = new Vector3(enemyTransform.position.x, enemyTransform.position.y, enemyTransform.position.z);
 
         turret.transform.LookAt(enemyTransform);
-
-
 
     }
 
@@ -63,17 +81,20 @@ public class Tower : MonoBehaviour
 
     public void UpgradeTowerNormal()
     {
-        if (mainManager.GetComponent<MainManager>().money >= ((upgradeCost + level) * upgradeCostModifier))
+
+        if (mainManager.GetComponent<MainManager>().money >= upgradeCostNormal)
         {
  
             if (level < maxLevel)
             {
-                mainManager.GetComponent<MainManager>().money -= Mathf.RoundToInt((upgradeCost + level) * upgradeCostModifier);
+                mainManager.GetComponent<MainManager>().money -= upgradeCostNormal;
                 level++;
 
                 range += 0.2F;
                 attackSpeed -= 0.1F;
                 attackDamage = Mathf.RoundToInt(attackDamage + (level / 2));
+
+                CalcUpgradeCost(towerName);
             }
             else
             {
@@ -89,17 +110,20 @@ public class Tower : MonoBehaviour
 
     public void UpgradeTowerFreeze()
     {
-        if (mainManager.GetComponent<MainManager>().money >= ((upgradeCost + level) * upgradeCostModifier))
+
+        if (mainManager.GetComponent<MainManager>().money >= upgradeCostFreeze)
         {
 
             if (level < maxLevel)
             {
-                mainManager.GetComponent<MainManager>().money -= Mathf.RoundToInt((upgradeCost + level) * upgradeCostModifier);
+                mainManager.GetComponent<MainManager>().money -= upgradeCostFreeze;
                 level++;
 
                 range += 0.1F;
                 attackSpeed -= 0.2F;
                 attackDamage = Mathf.RoundToInt(attackDamage + (level / 2));
+
+                CalcUpgradeCost(towerName);
 
             }
             else
@@ -116,17 +140,20 @@ public class Tower : MonoBehaviour
 
     public void UpgradeTowerToxic()
     {
-        if (mainManager.GetComponent<MainManager>().money >= ((upgradeCost + level) * upgradeCostModifier))
+        if (mainManager.GetComponent<MainManager>().money >= upgradeCostToxic)
         {
 
             if (level < maxLevel)
             {
-                mainManager.GetComponent<MainManager>().money -= Mathf.RoundToInt((upgradeCost + level) * upgradeCostModifier);
+                mainManager.GetComponent<MainManager>().money -= upgradeCostToxic;
                 level++;
 
                 range += 0.1F;
                 attackSpeed -= 0.2F;
                 attackDamage = Mathf.RoundToInt(attackDamage + (level / 2));
+
+                CalcUpgradeCost(towerName);
+
             }
             else
             {

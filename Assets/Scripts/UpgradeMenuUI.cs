@@ -93,20 +93,29 @@ public class UpgradeMenuUI : MonoBehaviour
         attackRangeUi = towerScript.GetComponent<Tower>().range;
         attackRangeText.text = "Attack Range: " + attackRangeUi;
 
-        costUi = towerScript.GetComponent<Tower>().upgradeCost;
-        costText.text = "Upgrade Cost: " + costUi;
-
         levelUi = towerScript.GetComponent<Tower>().level;
         levelText.text = "Level: " + levelUi;
 
+        if (towerScript.GetComponent<Tower>().towerName == "Normal Tower")
+        {
+            costUi = towerScript.GetComponent<Tower>().upgradeCostNormal;
+            costText.text = "Upgrade Cost: " + costUi;
+        }
+
         if (towerScript.GetComponent<Tower>().towerName == "Freeze Tower")
         {
+            costUi = towerScript.GetComponent<Tower>().upgradeCostFreeze;
+            costText.text = "Upgrade Cost: " + costUi;
+
             freezeUi = towerScript.GetComponent<FreezeTower>().freezeStrength;
             freezeText.text = "Freeze Strengt: " + freezeUi;
         }
 
         if (towerScript.GetComponent<Tower>().towerName == "Toxic Tower")
         {
+            costUi = towerScript.GetComponent<Tower>().upgradeCostToxic;
+            costText.text = "Upgrade Cost: " + costUi;
+
             toxicUi = towerScript.GetComponent<ToxicTower>().toxicDamage;
             toxicText.text = "Toxic Strength: " + toxicUi;
         }

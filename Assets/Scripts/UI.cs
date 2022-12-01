@@ -155,7 +155,7 @@ public class UI : MonoBehaviour
     {
         if (!waitCoRunning)
         {
-            transform.Find("InfoText").gameObject.SetActive(true);
+            infoText.SetActive(true);
             notEnoughMoneyText.text = "Not enough money!";
 
             StartCoroutine(Wait());
@@ -168,7 +168,7 @@ public class UI : MonoBehaviour
     {
         if (!waitCoRunning)
         {
-            transform.Find("InfoText").gameObject.SetActive(true);
+            infoText.SetActive(true);
             notEnoughMoneyText.text = "Max Level!";
 
             StartCoroutine(Wait());
@@ -182,7 +182,7 @@ public class UI : MonoBehaviour
         waitCoRunning = true;
 
         yield return new WaitForSeconds(infoDelay);
-        transform.Find("InfoText").gameObject.SetActive(false);
+        infoText.SetActive(false);
         waitCoRunning = false;
     }
 }

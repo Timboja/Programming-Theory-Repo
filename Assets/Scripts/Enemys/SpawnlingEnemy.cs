@@ -55,4 +55,15 @@ public class SpawnlingEnemy : Enemy
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bomb")
+        {
+            Debug.Log("Bomb damage");
+            damage = collision.gameObject.GetComponent<Bombs>().bombDamage;
+            TakeDamage(damage);
+        }
+    }
+
 }
