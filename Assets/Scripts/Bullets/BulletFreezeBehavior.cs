@@ -13,8 +13,6 @@ public class BulletFreezeBehavior : MonoBehaviour
     public float freezeStrenghtBullet;
 
     private bool bulletInFlight;
-    private bool coRunning;
-    private float destroyDelay = 0.3F;
 
     public GameObject mainManager;
 
@@ -67,14 +65,8 @@ public class BulletFreezeBehavior : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
 
-            //Delay on hit => otherwise no physic collition
-
-            if (!coRunning)
-            {
-
-                StartCoroutine(Wait());
-
-            }
+            bulletInFlight = false;
+            Destroy(gameObject);
 
         }
         else if (other.gameObject.tag == "Enviroment")
@@ -84,15 +76,5 @@ public class BulletFreezeBehavior : MonoBehaviour
 
         }
     }
-    IEnumerator Wait()
-    {
-        coRunning = true;
 
-        yield return new WaitForSeconds(destroyDelay);
-        bulletInFlight = false;
-        Destroy(gameObject);
-
-        coRunning = false;
-
-    }
 }

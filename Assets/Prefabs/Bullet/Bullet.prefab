@@ -130,6 +130,9 @@ MonoBehaviour:
   bulletRb: {fileID: 0}
   outOfBoundsZ: 10
   outOfBoundsX: 15
+  attackDamageBullet: 0
+  destroyDelay: 0
+  mainManager: {fileID: 0}
 --- !u!135 &-8178276465120156361
 SphereCollider:
   m_ObjectHideFlags: 0

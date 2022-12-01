@@ -15,8 +15,6 @@ public class BulletToxicBehavior : MonoBehaviour
     public int toxicTicksBullet;
 
     private bool bulletInFlight;
-    private bool coRunning;
-    private float destroyDelay = 0.3F;
 
     public GameObject mainManager;
 
@@ -71,14 +69,8 @@ public class BulletToxicBehavior : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
 
-            //Delay on hit => otherwise no physic collition
-
-            if (!coRunning)
-            {
-
-                StartCoroutine(Wait());
-
-            }
+            bulletInFlight = false;
+            Destroy(gameObject);
 
         }
         else if (other.gameObject.tag == "Enviroment")
@@ -87,16 +79,5 @@ public class BulletToxicBehavior : MonoBehaviour
             Destroy(gameObject);
 
         }
-    }
-    IEnumerator Wait()
-    {
-        coRunning = true;
-
-        yield return new WaitForSeconds(destroyDelay);
-        bulletInFlight = false;
-        Destroy(gameObject);
-
-        coRunning = false;
-
     }
 }

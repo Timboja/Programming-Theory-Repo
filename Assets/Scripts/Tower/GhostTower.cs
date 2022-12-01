@@ -59,8 +59,12 @@ public class GhostTower : MonoBehaviour
 
         //If rightclick is released destroy the object.
 
-        if (!ui.GetComponent<UI>().normalTowerClicked && Input.GetMouseButtonUp(1) || !ui.GetComponent<UI>().freezeTowerClicked && Input.GetMouseButtonUp(1))
+        if(Input.GetMouseButtonUp(1))
         {
+            ui.GetComponent<UI>().normalTowerClicked = false;
+            ui.GetComponent<UI>().freezeTowerClicked = false;
+            ui.GetComponent<UI>().toxicTowerClicked = false;
+            ui.GetComponent<UI>().bombsClicked = false;
             Destroy(gameObject);
         }
 

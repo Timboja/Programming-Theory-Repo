@@ -2050,13 +2050,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9ec4bb02b3d4a2c94040333b37d933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3.5
+  range: 4
   roationSpeed: 0
   attackSpeed: 2
   attackDamage: 10
   towerName: Normal Tower
   kills: 0
-  upgradeCost: 10
+  upgradeCostNormal: 0
+  upgradeCostFreeze: 0
+  upgradeCostToxic: 0
+  upgradeBaseCost: 0
   upgradeCostModifier: 1.2
   level: 1
   maxLevel: 10

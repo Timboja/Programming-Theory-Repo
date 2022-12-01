@@ -39,6 +39,7 @@ public class EnemyDetection : MonoBehaviour
 
         else if (other.gameObject.tag == "Enemy" && enemyCurrent != null)
         {
+
             enemyNext = other.gameObject;
 
         }
@@ -49,6 +50,31 @@ public class EnemyDetection : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+
+        //Unlocks an enemy exiting the range of the tower
+
+        if (other.gameObject.GetInstanceID() == enemyCurrent.GetInstanceID())
+        {
+            enemyLocked = false;
+            enemyCurrent = null;
+            enemyTransform = null;
+
+            //Checks if there is anothere enemy in range of the tower then locks that enemy.
+
+            if (enemyNext != null)
+            {
+                enemyCurrent = enemyNext;
+                enemyNext = null;
+                enemyTransform = enemyCurrent.gameObject.transform;
+
+
+                enemyLocked = true;
+
+            }
+
+        }
+
+        /*
         if (other.gameObject.tag == "Enemy" && enemyCurrent != null)
         {
 
@@ -69,6 +95,7 @@ public class EnemyDetection : MonoBehaviour
 
             }
         }
+        */
 
     }
 

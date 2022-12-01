@@ -11,8 +11,6 @@ public class BulletBehavior : MonoBehaviour
     public int attackDamageBullet;
 
     private bool bulletInFlight;
-    private bool coRunning;
-    private float destroyDelay = 0.3F;
 
     public GameObject mainManager;
 
@@ -63,33 +61,16 @@ public class BulletBehavior : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
 
-            //Delay on hit => otherwise no physic collition
-
-            if(!coRunning)
-            {
-
-                StartCoroutine(Wait());
-
-            }
-
-        }
-        else if (other.gameObject.tag == "Enviroment")
-        {
             bulletInFlight = false;
             Destroy(gameObject);
 
         }
-    }
-    IEnumerator Wait()
-    {
+        else if (other.gameObject.tag == "Enviroment")
+        {
 
-        coRunning = true;
+            bulletInFlight = false;
+            Destroy(gameObject);
 
-        yield return new WaitForSeconds(destroyDelay);
-        bulletInFlight = false;
-        Destroy(gameObject);
-
-        coRunning = false;
-
+        }
     }
 }
