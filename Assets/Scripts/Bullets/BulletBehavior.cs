@@ -25,12 +25,15 @@ public class BulletBehavior : MonoBehaviour
         bulletRb.AddForce(bulletRb.transform.forward * firingSpeed, ForceMode.Impulse);
 
     }
+
+    /*
     private void Update()
     {
         //Out of bounds detection Z,X und Destroy
 
         if (transform.position.z >= outOfBoundsZ || transform.position.z <= -outOfBoundsZ)
         {
+            Debug.Log("");
             bulletInFlight = false;
             Destroy(gameObject);
 
@@ -42,12 +45,13 @@ public class BulletBehavior : MonoBehaviour
 
         }
     }
+    */
 
     //Gives the bullet the attack damge of the tower
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Normal Tower" && !bulletInFlight)
+        if (other.CompareTag("Normal Tower") && !bulletInFlight)
         {
             attackDamageBullet = other.GetComponent<Tower>().attackDamage;
 
@@ -58,16 +62,16 @@ public class BulletBehavior : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "Enemy")
+        if (other.CompareTag("Enemy"))
         {
 
             bulletInFlight = false;
             Destroy(gameObject);
 
         }
-        else if (other.gameObject.tag == "Enviroment")
+        else if (other.CompareTag("Enviroment") || other.CompareTag("Road"))
         {
-
+            Debug.Log("Hit Enviroment");
             bulletInFlight = false;
             Destroy(gameObject);
 

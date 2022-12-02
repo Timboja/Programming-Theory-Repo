@@ -84,8 +84,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4522569, y: 1.3367069, z: 1.4073817}
-  m_Center: {x: -0.017749716, y: 0.6179112, z: -0.017013052}
+  m_Size: {x: 1.7237095, y: 1.3663837, z: 1.6749302}
+  m_Center: {x: 0.012881358, y: 0.6327496, z: -0.027125478}
 --- !u!114 &588918866160213296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   damage: 0
-  bounty: 2
+  bounty: 3
   enemyDamage: 1
   freeze: 0
   toxicDamage: 0

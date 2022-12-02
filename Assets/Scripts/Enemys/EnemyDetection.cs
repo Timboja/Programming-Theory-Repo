@@ -53,26 +53,31 @@ public class EnemyDetection : MonoBehaviour
 
         //Unlocks an enemy exiting the range of the tower
 
-        if (other.gameObject.GetInstanceID() == enemyCurrent.GetInstanceID())
+        if (enemyCurrent != null)
         {
-            enemyLocked = false;
-            enemyCurrent = null;
-            enemyTransform = null;
-
-            //Checks if there is anothere enemy in range of the tower then locks that enemy.
-
-            if (enemyNext != null)
+            if (other.gameObject.GetInstanceID() == enemyCurrent.GetInstanceID() && other.CompareTag("Enemy"))
             {
-                enemyCurrent = enemyNext;
-                enemyNext = null;
-                enemyTransform = enemyCurrent.gameObject.transform;
+                enemyLocked = false;
+                enemyCurrent = null;
+                enemyTransform = null;
+
+                //Checks if there is anothere enemy in range of the tower then locks that enemy.
+
+                if (enemyNext != null)
+                {
+                    enemyCurrent = enemyNext;
+                    enemyNext = null;
+                    enemyTransform = enemyCurrent.gameObject.transform;
 
 
-                enemyLocked = true;
+                    enemyLocked = true;
+
+                }
 
             }
-
         }
+
+
 
         /*
         if (other.gameObject.tag == "Enemy" && enemyCurrent != null)

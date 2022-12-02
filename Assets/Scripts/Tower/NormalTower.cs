@@ -31,7 +31,6 @@ public class NormalTower : Tower
     IEnumerator Attack()
     {
 
-
         Instantiate(bullet, turret.transform.position, turret.transform.rotation);
         yield return new WaitForSeconds(attackSpeed);
         attackCoRunning = false;
