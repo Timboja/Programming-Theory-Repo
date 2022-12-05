@@ -279,6 +279,7 @@ MonoBehaviour:
   healthbar: {fileID: 8278196643629251597}
   healthbarCanvas: {fileID: 8504081359313203081}
   spawnlings: {fileID: 0}
+  enemyDeathExplosition: {fileID: 19860484, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
 --- !u!1 &8480854669767269726
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,6 +26,8 @@ public class Enemy : MonoBehaviour
     public GameObject healthbarCanvas;
     public GameObject spawnlings;
 
+    public ParticleSystem enemyDeathExplosition;
+
     public void TakeDamage(int damage)
     {
 
@@ -37,6 +39,8 @@ public class Enemy : MonoBehaviour
         {
 
             mainManager.GetComponent<MainManager>().money += bounty;
+
+            Instantiate(enemyDeathExplosition,transform.position,transform.rotation);
 
             Destroy(gameObject);
             enemyDown = true;

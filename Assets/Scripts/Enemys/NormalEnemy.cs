@@ -26,7 +26,6 @@ public class NormalEnemy : Enemy
     {
         if (other.gameObject.tag == "BulletNormalTower")
         {
-
             damage = other.GetComponent<BulletBehavior>().attackDamageBullet;
             Debug.Log("Hit damage: " + damage);
             TakeDamage(damage);

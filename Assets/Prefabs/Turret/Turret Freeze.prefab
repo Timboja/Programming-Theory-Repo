@@ -680,7 +680,7 @@ MonoBehaviour:
   range: 4.5
   roationSpeed: 0
   attackSpeed: 2.5
-  attackDamage: 4
+  attackDamage: 3
   towerName: Freeze Tower
   kills: 0
   upgradeCostNormal: 0

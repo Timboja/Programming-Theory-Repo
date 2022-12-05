@@ -33,6 +33,9 @@ public class Tower : MonoBehaviour
     public GameObject uI;
     public GameObject turret;
 
+    public MeshRenderer muzzleFlash;
+    public float flashTime;
+
     public void Start()
     {
 

@@ -33,6 +33,8 @@ public class MainManager : MonoBehaviour
     public GameObject ghostBombs;
     public GameObject ui;
 
+    public ParticleSystem explosion;
+
     public bool win;
     private bool finalWave;
     public bool gameIsActive = true;
@@ -54,6 +56,7 @@ public class MainManager : MonoBehaviour
         if (live <= 0)
         {
             gameIsActive = false;
+            explosion.Play();
         }
 
         if (waveRunning == true)
