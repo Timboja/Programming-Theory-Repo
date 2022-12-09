@@ -477,6 +477,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 134.0002
       objectReference: {fileID: 0}
+    - target: {fileID: 2108676304, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1475784579484775485, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -499,15 +503,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3240645426346561347, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.64
+      value: -8.15
       objectReference: {fileID: 0}
     - target: {fileID: 3240645426346561347, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.04
       objectReference: {fileID: 0}
     - target: {fileID: 3240645426346561347, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.93
+      value: -1.44
       objectReference: {fileID: 0}
     - target: {fileID: 3240645426346561347, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
       propertyPath: m_LocalRotation.w
@@ -587,6 +591,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6111449030753347622, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
   m_PrefabInstance: {fileID: 5516994694447642524}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &5516994694540561928 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2106210708, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
+  m_PrefabInstance: {fileID: 5516994694447642524}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7156961128823275836 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3441576172889994912, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
@@ -609,7 +618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebc6a1e339a34d22b07871ab59c70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3
+  range: 4
   roationSpeed: 0
   attackSpeed: 1.5
   attackDamage: 2
@@ -630,6 +639,8 @@ MonoBehaviour:
   mainManager: {fileID: 0}
   uI: {fileID: 0}
   turret: {fileID: 653484895949084677}
+  muzzleFlash: {fileID: 5516994694540561928}
+  flashTime: 0.2
   toxicDamage: 1
   toxicSpeed: 1
   toxicTicks: 4

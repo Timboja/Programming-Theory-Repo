@@ -32,6 +32,7 @@ public class Tower : MonoBehaviour
     public GameObject mainManager;
     public GameObject uI;
     public GameObject turret;
+    public GameObject musicPlayer;
 
     public MeshRenderer muzzleFlash;
     public float flashTime;
@@ -41,6 +42,7 @@ public class Tower : MonoBehaviour
 
         mainManager = GameObject.FindGameObjectWithTag("MainManager");
         uI = GameObject.FindGameObjectWithTag("UI");
+        musicPlayer = GameObject.FindGameObjectWithTag("MusicPlayer");
 
         CalcUpgradeCost(towerName);
 
@@ -64,7 +66,7 @@ public class Tower : MonoBehaviour
         }
         else
         {
-            Debug.Log("Wrong or empty Towername variable");
+            Debug.Log("Error: Wrong or empty Towername variable!");
         }
 
     }
@@ -98,15 +100,19 @@ public class Tower : MonoBehaviour
                 attackDamage = Mathf.RoundToInt(attackDamage + (level / 2));
 
                 CalcUpgradeCost(towerName);
+
+                musicPlayer.GetComponent<MusicPlayer>().PlayUpgradeSound();
             }
             else
             {
                 uI.GetComponent<UI>().maxLevel();
+                musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
             }
         }
         else
         {
             uI.GetComponent<UI>().notEnoughMoney();
+            musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
         }
 
     }
@@ -128,15 +134,18 @@ public class Tower : MonoBehaviour
 
                 CalcUpgradeCost(towerName);
 
+                musicPlayer.GetComponent<MusicPlayer>().PlayUpgradeSound();
             }
             else
             {
                 uI.GetComponent<UI>().maxLevel();
+                musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
             }
         }
         else
         {
             uI.GetComponent<UI>().notEnoughMoney();
+            musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
         }
 
     }
@@ -157,16 +166,19 @@ public class Tower : MonoBehaviour
 
                 CalcUpgradeCost(towerName);
 
+                musicPlayer.GetComponent<MusicPlayer>().PlayUpgradeSound();
             }
             else
             {
                 uI.GetComponent<UI>().maxLevel();
+                musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
             }
 
         }
         else
         {
             uI.GetComponent<UI>().notEnoughMoney();
+            musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
         }
 
     }

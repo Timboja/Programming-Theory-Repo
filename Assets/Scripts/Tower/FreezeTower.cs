@@ -23,6 +23,7 @@ public class FreezeTower : Tower
             if (!attackCoRunning)
             {
 
+                StartCoroutine(Flash());
                 attackCoRunning = true;
                 StartCoroutine(Attack());
 
@@ -37,6 +38,15 @@ public class FreezeTower : Tower
         Instantiate(bullet, turret.transform.position, turret.transform.rotation);
         yield return new WaitForSeconds(attackSpeed);
         attackCoRunning = false;
+
+    }
+
+    IEnumerator Flash()
+    {
+
+        muzzleFlash.enabled = true;
+        yield return new WaitForSeconds(flashTime);
+        muzzleFlash.enabled = false;
 
     }
 }

@@ -25,6 +25,7 @@ TagManager:
   - Bomb
   - Road
   - Rocks
+  - MusicPlayer
   layers:
   - Default
   - TransparentFX

@@ -513,6 +513,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 125
       objectReference: {fileID: 0}
+    - target: {fileID: 2108676304, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1475784579484775485, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -543,15 +547,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3240645426346561347, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.491
+      value: -8.166
       objectReference: {fileID: 0}
     - target: {fileID: 3240645426346561347, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.481
+      value: 1.002
       objectReference: {fileID: 0}
     - target: {fileID: 3240645426346561347, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.263
+      value: -2.929
       objectReference: {fileID: 0}
     - target: {fileID: 3240645426346561347, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
       propertyPath: m_LocalRotation.w
@@ -655,6 +659,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6111449030753347622, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
   m_PrefabInstance: {fileID: 477781011751680579}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &477781009646519255 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2106210708, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
+  m_PrefabInstance: {fileID: 477781011751680579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2982372548033694947 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3441576172889994912, guid: 3a52ae37d10354262ad61533647ab860, type: 3}
@@ -698,4 +707,6 @@ MonoBehaviour:
   mainManager: {fileID: 0}
   uI: {fileID: 0}
   turret: {fileID: 4837010247120213466}
+  muzzleFlash: {fileID: 477781009646519255}
+  flashTime: 0.2
   freezeStrength: 0.2

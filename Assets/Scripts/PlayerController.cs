@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public GameObject currentUpgradeMenu;
     public GameObject ui;
     public GameObject mainManager;
+    public GameObject musicPlayer;
 
     public Vector3 basePosition;
 
@@ -56,10 +57,14 @@ public class PlayerController : MonoBehaviour
 
                         Instantiate(normalTower, basePosition, transform.rotation);
                         mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostNormalTower;
+
+                        musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
+
                     }
                     else
                     {
                         ui.GetComponent<UI>().notEnoughMoney();
+                        musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
                     }
 
                 }
@@ -77,10 +82,13 @@ public class PlayerController : MonoBehaviour
 
                         Instantiate(freezeTower, basePosition, transform.rotation);
                         mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostFreezeTower;
+
+                        musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
                     }
                     else
                     {
                         ui.GetComponent<UI>().notEnoughMoney();
+                        musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
                     }
 
                 }
@@ -98,10 +106,13 @@ public class PlayerController : MonoBehaviour
 
                         Instantiate(toxicTower, basePosition, transform.rotation);
                         mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostToxicTower;
+
+                        musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
                     }
                     else
                     {
                         ui.GetComponent<UI>().notEnoughMoney();
+                        musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
                     }
 
                 }
@@ -113,10 +124,13 @@ public class PlayerController : MonoBehaviour
                     {
                         Instantiate(bombs, raycasthit.point + new Vector3(0,bombsYoffset,0), transform.rotation);
                         mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostBombs;
+
+                        musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
                     }
                     else
                     {
                         ui.GetComponent<UI>().notEnoughMoney();
+                        musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
                     }
 
                 }

@@ -26,6 +26,9 @@ public class Enemy : MonoBehaviour
     public GameObject healthbarCanvas;
     public GameObject spawnlings;
 
+    public AudioSource hitSound;
+    public AudioSource deathSound;
+
     public ParticleSystem enemyDeathExplosition;
 
     public void TakeDamage(int damage)
@@ -34,6 +37,8 @@ public class Enemy : MonoBehaviour
         currentHealth -= damage;
 
         healthbar.SetHealth(currentHealth);
+
+        hitSound.Play();
 
         if (currentHealth <= 0 && !enemyDown)
         {
@@ -68,7 +73,9 @@ public class Enemy : MonoBehaviour
 
             for (int i = 0; i < spawnlingNumber; i++)
             {
+
                 Instantiate(spawnlings, transform.position, transform.rotation);
+
             }
 
 

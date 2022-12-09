@@ -69,7 +69,8 @@ public class BulletBehavior : MonoBehaviour
             Destroy(gameObject);
 
         }
-        else if (other.CompareTag("Enviroment") || other.CompareTag("Road"))
+
+        if (other.CompareTag("Enviroment") || other.CompareTag("Road"))
         {
             Debug.Log("Hit Enviroment");
             bulletInFlight = false;

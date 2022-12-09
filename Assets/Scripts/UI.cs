@@ -67,11 +67,13 @@ public class UI : MonoBehaviour
         if (mainManager.GetComponent<MainManager>().gameIsActive == false && !mainManager.GetComponent<MainManager>().win)
         {
             transform.Find("Game Over Context").gameObject.SetActive(true);
+            StartCoroutine(Wait());
         }
 
         if (mainManager.GetComponent<MainManager>().win)
         {
             transform.Find("Win Context").gameObject.SetActive(true);
+            StartCoroutine(Wait());
         }
 
         moneyUI = mainManager.GetComponent<MainManager>().money;
@@ -90,6 +92,18 @@ public class UI : MonoBehaviour
     public void StartWaveClicked()
     {
         mainManager.GetComponent<MainManager>().StartWave();
+
+        if (mainManager.GetComponent<MainManager>().wave  == 5)
+        {
+            transform.Find("Boss Wave").gameObject.SetActive(true);
+            StartCoroutine(WaveInfoDelay());
+        }
+
+        if (mainManager.GetComponent<MainManager>().wave == 10)
+        {
+            transform.Find("Final Wave").gameObject.SetActive(true);
+            StartCoroutine(WaveInfoDelay());
+        }
     }
 
     //When the Tower Image is clicked
@@ -179,10 +193,21 @@ public class UI : MonoBehaviour
 
     IEnumerator Wait()
     {
+
         waitCoRunning = true;
 
         yield return new WaitForSeconds(infoDelay);
         infoText.SetActive(false);
         waitCoRunning = false;
+
+    }
+
+    IEnumerator WaveInfoDelay()
+    {
+
+        yield return new WaitForSeconds(2);
+        transform.Find("Final Wave").gameObject.SetActive(false);
+        transform.Find("Boss Wave").gameObject.SetActive(false);
+
     }
 }

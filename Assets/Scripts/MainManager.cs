@@ -25,6 +25,7 @@ public class MainManager : MonoBehaviour
     public int costRemoveRockBig;
     public int costRemoveRocksmall;
 
+    public GameObject musicPlayer;
     public GameObject spawnerObject;
     public GameObject startButton;
     public GameObject ghostTower;
@@ -75,6 +76,7 @@ public class MainManager : MonoBehaviour
                 {
                     gameIsActive = false;
                     win = true;
+                    musicPlayer.GetComponent<MusicPlayer>().PlayWinMusic();
                 }
             }
         }
@@ -93,6 +95,8 @@ public class MainManager : MonoBehaviour
             {
                 finalWave = true;
             }
+
+            musicPlayer.GetComponent<MusicPlayer>().PlayMainMusic(wave);
 
             spawnerObject.GetComponent<Spawner>().SpawnWave(wave);
         }
@@ -128,7 +132,7 @@ public class MainManager : MonoBehaviour
 
         bool enemysOnField = false;
 
-        if (GameObject.Find("Enemy Normal(Clone)") == null)
+        if (GameObject.Find("Enemy Normal(Clone)") == null && GameObject.Find("Enemy Fast(Clone)") == null && GameObject.Find("Enemy Spawnling(Clone)") == null && GameObject.Find("Enemy Boss(Clone)") == null)
         {
             enemysOnField = false;
         }

@@ -31,13 +31,13 @@ public class NormalTower : Tower
     IEnumerator Attack()
     {
 
-        Instantiate(bullet, turret.transform.position, turret.transform.rotation);
+        Instantiate(bullet, turret.transform.position + new Vector3(0,0.1F,0), turret.transform.rotation);
         yield return new WaitForSeconds(attackSpeed);
         attackCoRunning = false;
 
     }
 
-    IEnumerator Flash()
+    IEnumerator Flash()  
     {
 
         muzzleFlash.enabled = true;
