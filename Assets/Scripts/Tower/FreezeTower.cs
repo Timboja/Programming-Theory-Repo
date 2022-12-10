@@ -5,8 +5,6 @@ using UnityEngine;
 public class FreezeTower : Tower
 {
 
-    public float freezeStrength;
-
     // Update is called once per frame
     void Update()
     {

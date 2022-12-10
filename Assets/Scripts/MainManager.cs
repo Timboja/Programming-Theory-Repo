@@ -9,7 +9,6 @@ public class MainManager : MonoBehaviour
     public int money;
 
     public int difficultModifer;
-    public int startEnemys;
 
     public float baseRangeNormalTower;
     public int baseCostNormalTower;
@@ -37,7 +36,7 @@ public class MainManager : MonoBehaviour
     public ParticleSystem explosion;
 
     public bool win;
-    private bool finalWave;
+    public bool finalWave;
     public bool gameIsActive = true;
     public bool waveRunning;
     public bool enemyOnField;
@@ -54,10 +53,12 @@ public class MainManager : MonoBehaviour
     {
         //Checks game states
 
-        if (live <= 0)
+        if (live <= 0 && gameIsActive)
         {
             gameIsActive = false;
             explosion.Play();
+            musicPlayer.GetComponent<MusicPlayer>().PlayGameOverSound();
+            Debug.Log("Gameover music");
         }
 
         if (waveRunning == true)
@@ -72,11 +73,12 @@ public class MainManager : MonoBehaviour
                 {
                     startButton.SetActive(true);
                 }
-                if (finalWave)
+                else if (finalWave && gameIsActive)
                 {
                     gameIsActive = false;
                     win = true;
                     musicPlayer.GetComponent<MusicPlayer>().PlayWinMusic();
+                    Debug.Log("Win music");
                 }
             }
         }

@@ -5,10 +5,6 @@ using UnityEngine;
 public class ToxicTower : Tower
 {
 
-    public int toxicDamage;
-    public float toxicSpeed;
-    public int toxicTicks;
-
     // Update is called once per frame
     void Update()
     {

@@ -35,7 +35,7 @@ public class SpawnlingEnemy : Enemy
         {
             damage = other.GetComponent<BulletFreezeBehavior>().attackDamageBullet;
             freeze = other.GetComponent<BulletFreezeBehavior>().freezeStrenghtBullet;
-            TakeDamage(damage);
+            TakeDamage(damage, spawnlingsToHatch);
             TakeFreeze(freeze);
         }
         if (other.gameObject.tag == "BulletToxicTower")
@@ -45,8 +45,8 @@ public class SpawnlingEnemy : Enemy
             toxicSpeed = other.GetComponent<BulletToxicBehavior>().toxicSpeedBullet;
             toxicTicks = other.GetComponent<BulletToxicBehavior>().toxicTicksBullet;
 
-            TakeDamage(damage);
-            TakeToxic(toxicDamage);
+            TakeDamage(damage, spawnlingsToHatch);
+            TakeToxic(toxicDamage, spawnlingsToHatch);
         }
 
         if (other.gameObject.tag == "Endzone")
@@ -62,7 +62,7 @@ public class SpawnlingEnemy : Enemy
         {
             Debug.Log("Bomb damage");
             damage = collision.gameObject.GetComponent<Bombs>().bombDamage;
-            TakeDamage(damage);
+            TakeDamage(damage, spawnlingsToHatch);
         }
     }
 

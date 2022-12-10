@@ -9,6 +9,12 @@ public class Tower : MonoBehaviour
     public float attackSpeed;
     public int attackDamage;
 
+    public float freezeStrength;
+
+    public int toxicDamage;
+    public float toxicSpeed;
+    public int toxicTicks;
+
     public string towerName;
     public int kills;
 
@@ -58,11 +64,11 @@ public class Tower : MonoBehaviour
         }
         else if (towerName == "Freeze Tower")
         {
-            upgradeCostFreeze = Mathf.RoundToInt((mainManager.GetComponent<MainManager>().baseCostFreezeTower + level) * upgradeCostModifier);
+            upgradeCostFreeze = Mathf.RoundToInt((mainManager.GetComponent<MainManager>().baseCostFreezeTower + (level * 1.5F)) * upgradeCostModifier);
         }
         else if (towerName == "Toxic Tower")
         {
-            upgradeCostToxic = Mathf.RoundToInt((mainManager.GetComponent<MainManager>().baseCostToxicTower + level) * upgradeCostModifier);
+            upgradeCostToxic = Mathf.RoundToInt((mainManager.GetComponent<MainManager>().baseCostToxicTower + (level * 2)) * upgradeCostModifier);
         }
         else
         {
@@ -131,6 +137,7 @@ public class Tower : MonoBehaviour
                 range += 0.1F;
                 attackSpeed -= 0.2F;
                 attackDamage = Mathf.RoundToInt(attackDamage + (level / 2));
+                freezeStrength += 0.1F;
 
                 CalcUpgradeCost(towerName);
 
@@ -163,6 +170,8 @@ public class Tower : MonoBehaviour
                 range += 0.1F;
                 attackSpeed -= 0.2F;
                 attackDamage = Mathf.RoundToInt(attackDamage + (level / 2));
+                toxicDamage += 1;
+                toxicTicks += 1;
 
                 CalcUpgradeCost(towerName);
 

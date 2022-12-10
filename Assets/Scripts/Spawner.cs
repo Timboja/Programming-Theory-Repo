@@ -23,25 +23,25 @@ public class Spawner : MonoBehaviour
         // { Normal Enemy, Fast Enemy, Spawnling Enemy, Boss Enemy }
 
         // Wave1
-        { 5, 0, 0, 0 },
+        { 3, 0, 0, 0 },
         // Wave2
         { 12, 0, 0, 0 },
         // Wave3
-        { 0, 6, 1, 0 },
+        { 0, 10, 1, 0 },
         // Wave4
-        { 20, 8, 1, 0 },
+        { 20, 8, 2, 0 },
         // Wave5
-        { 2, 0, 0, 1 },
+        { 20, 10, 0, 1 },
         // Wave6
         { 30, 4, 2, 0 },
         // Wave7
-        { 0, 0, 8, 0 },
+        { 0, 0, 7, 0 },
         // Wave8
         { 20, 0, 0, 2 },
         // Wave9
         { 0, 30, 1, 0 },
         // Wave10
-        { 50, 40, 4, 4 },
+        { 20, 20, 4, 3 },
 
     };
 

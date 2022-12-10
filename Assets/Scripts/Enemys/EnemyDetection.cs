@@ -35,7 +35,7 @@ public class EnemyDetection : MonoBehaviour
 
         }
 
-        //Checks if there is currently a enemy in the tower lock theen marks it as next target.
+        //if there is currently a enemy in the tower lock then mark the next enemy entering the tower range
 
         else if (other.gameObject.tag == "Enemy" && enemyCurrent != null)
         {
@@ -50,6 +50,15 @@ public class EnemyDetection : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        //If enemyNext leaves the range => sets it to null
+
+        if (enemyNext != null)
+        {
+            if (other.gameObject.GetInstanceID() == enemyNext.GetInstanceID() && other.CompareTag("Enemy"))
+            {
+                enemyNext = null;
+            }
+        }
 
         //Unlocks an enemy exiting the range of the tower
 
@@ -69,38 +78,12 @@ public class EnemyDetection : MonoBehaviour
                     enemyNext = null;
                     enemyTransform = enemyCurrent.gameObject.transform;
 
-
                     enemyLocked = true;
 
                 }
 
             }
         }
-
-
-
-        /*
-        if (other.gameObject.tag == "Enemy" && enemyCurrent != null)
-        {
-
-            enemyLocked = false;
-            enemyCurrent = null;
-            enemyTransform = null;
-
-            //Checks if there is anothere enemy in range of the tower then locks that enemy.
-
-            if (enemyNext != null)
-            {
-                enemyCurrent = enemyNext;
-                enemyNext = null;
-                enemyTransform = enemyCurrent.gameObject.transform;
-
-
-                enemyLocked = true;
-
-            }
-        }
-        */
 
     }
 

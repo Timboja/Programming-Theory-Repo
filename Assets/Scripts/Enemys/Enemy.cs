@@ -65,6 +65,8 @@ public class Enemy : MonoBehaviour
 
         healthbar.SetHealth(currentHealth);
 
+        hitSound.Play();
+
         if (currentHealth <= 0 && !enemyDown)
         {
 
@@ -78,6 +80,7 @@ public class Enemy : MonoBehaviour
 
             }
 
+            Instantiate(enemyDeathExplosition, transform.position, transform.rotation);
 
             Destroy(gameObject);
             enemyDown = true;
@@ -101,10 +104,25 @@ public class Enemy : MonoBehaviour
         StartCoroutine(ToxicDamage(toxicDamage));
     }
 
+    public void TakeToxic(int toxicDamage, int spawnlingNumber)
+    {
+        StartCoroutine(ToxicDamageSpawnling(toxicDamage, spawnlingNumber));
+    }
+
     public void LifeDamage(int damage)
     {
 
         mainManager.GetComponent<MainManager>().live -= damage;
+
+    }
+
+    IEnumerator ToxicDamageSpawnling(int toxicDamage, int spawnlingNumber)
+    {
+        for (int i = 0; i < toxicTicks; i++)
+        {
+            yield return new WaitForSeconds(toxicSpeed);
+            TakeDamage(toxicDamage, spawnlingNumber);
+        }
 
     }
 

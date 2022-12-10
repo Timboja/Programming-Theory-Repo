@@ -8,6 +8,7 @@ public class RockRemove : MonoBehaviour
 
     public GameObject mainManager;
     public GameObject ui;
+    public GameObject removeExplosition;
 
     public string rockSize;
 

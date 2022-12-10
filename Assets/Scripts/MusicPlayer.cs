@@ -64,9 +64,10 @@ public class MusicPlayer : MonoBehaviour
     public void PlayGameOverSound()
     {
 
+        audioEffectsPlayer.Stop();
+        audioEffectsPlayer.clip = gameOverSound;
+        audioEffectsPlayer.Play();
         audioPlayer.Stop();
-        audioPlayer.clip = gameOverSound;
-        audioPlayer.Play();
 
     }
 
