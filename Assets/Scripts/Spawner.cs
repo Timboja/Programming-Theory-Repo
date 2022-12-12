@@ -20,28 +20,28 @@ public class Spawner : MonoBehaviour
 
         enemyWaves = new int[,] {
 
-        // { Normal Enemy, Fast Enemy, Spawnling Enemy, Boss Enemy }
+        // { Boss Enemy, Fast Enemy, Spawnling Enemy, Normal Enemy }
 
         // Wave1
-        { 3, 0, 0, 0 },
+        { 0, 0, 0, 3 },
         // Wave2
-        { 12, 0, 0, 0 },
+        { 0, 0, 0, 12 },
         // Wave3
         { 0, 10, 1, 0 },
         // Wave4
-        { 20, 8, 2, 0 },
+        { 0, 15, 2, 20 },
         // Wave5
-        { 20, 10, 0, 1 },
+        { 1, 10, 0, 10 },
         // Wave6
-        { 30, 4, 2, 0 },
+        { 0, 4, 2, 30 },
         // Wave7
-        { 0, 0, 7, 0 },
+        { 0, 0, 10, 0 },
         // Wave8
-        { 20, 0, 0, 2 },
+        { 0, 30, 0, 30 },
         // Wave9
-        { 0, 30, 1, 0 },
+        { 0, 30, 4, 0 },
         // Wave10
-        { 20, 20, 4, 3 },
+        { 3, 20, 8, 40 },
 
     };
 
@@ -52,6 +52,7 @@ public class Spawner : MonoBehaviour
     {
 
         StartCoroutine(SpawnWaveDelay(wave));
+        spawnDelay -= 0.05F;
 
     }
 

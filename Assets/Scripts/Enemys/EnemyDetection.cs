@@ -16,6 +16,11 @@ public class EnemyDetection : MonoBehaviour
         if (enemyTransform == null && enemyLocked == true)
         {
             enemyLocked = false;
+
+            if (enemyNext != null && !enemyLocked)
+            {
+                NextEnemy();
+            }
         }
     }
 
@@ -85,6 +90,15 @@ public class EnemyDetection : MonoBehaviour
             }
         }
 
+    }
+
+    public void NextEnemy()
+    {
+        enemyCurrent = enemyNext;
+        enemyNext = null;
+        enemyTransform = enemyCurrent.gameObject.transform;
+
+        enemyLocked = true;
     }
 
 }

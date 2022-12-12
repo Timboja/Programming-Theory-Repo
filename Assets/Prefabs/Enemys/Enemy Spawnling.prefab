@@ -265,10 +265,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702dc2a557ec4474d85585c24b589df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 80
+  maxHealth: 100
   currentHealth: 0
   damage: 0
-  bounty: 12
+  bounty: 15
   enemyDamage: 5
   freeze: 0
   toxicDamage: 0
@@ -281,6 +281,7 @@ MonoBehaviour:
   healthbarCanvas: {fileID: 7199893072964495423}
   spawnlings: {fileID: 8415901559217927373, guid: 02c0bbf03259b46f99ff9b75c6920518, type: 3}
   hitSound: {fileID: -3223868360394567982}
+  deathSound: {fileID: 0}
   enemyDeathExplosition: {fileID: 19860484, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
   spawnlingsToHatch: 6
 --- !u!82 &-3223868360394567982

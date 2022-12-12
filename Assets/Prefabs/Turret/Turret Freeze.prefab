@@ -710,13 +710,17 @@ MonoBehaviour:
   roationSpeed: 0
   attackSpeed: 2.5
   attackDamage: 3
+  freezeStrength: 0.2
+  toxicDamage: 0
+  toxicSpeed: 0
+  toxicTicks: 0
   towerName: Freeze Tower
   kills: 0
   upgradeCostNormal: 0
   upgradeCostFreeze: 0
   upgradeCostToxic: 0
   upgradeBaseCost: 0
-  upgradeCostModifier: 1.6
+  upgradeCostModifier: 3
   level: 1
   maxLevel: 10
   enemyLocked: 0
@@ -730,4 +734,3 @@ MonoBehaviour:
   musicPlayer: {fileID: 0}
   muzzleFlash: {fileID: 477781009646519255}
   flashTime: 0.2
-  freezeStrength: 0.2

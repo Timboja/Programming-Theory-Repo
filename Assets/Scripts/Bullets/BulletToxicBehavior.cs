@@ -29,23 +29,7 @@ public class BulletToxicBehavior : MonoBehaviour
         bulletRb.AddForce(bulletRb.transform.forward * firingSpeed, ForceMode.Impulse);
 
     }
-    private void Update()
-    {
-        //Out of bounds detection Z,X und Destroy
 
-        if (transform.position.z >= outOfBoundsZ || transform.position.z <= -outOfBoundsZ)
-        {
-            bulletInFlight = false;
-            Destroy(gameObject);
-
-        }
-        else if (transform.position.x >= outOfBoundsX || transform.position.x <= -outOfBoundsX)
-        {
-            bulletInFlight = false;
-            Destroy(gameObject);
-
-        }
-    }
 
     //Gives the bullet the attack damge of the tower
 
@@ -75,6 +59,7 @@ public class BulletToxicBehavior : MonoBehaviour
         }
         else if (other.gameObject.tag == "Enviroment")
         {
+
             bulletInFlight = false;
             Destroy(gameObject);
 

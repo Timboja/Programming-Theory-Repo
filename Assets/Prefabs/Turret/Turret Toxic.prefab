@@ -642,13 +642,17 @@ MonoBehaviour:
   roationSpeed: 0
   attackSpeed: 1.5
   attackDamage: 2
+  freezeStrength: 0
+  toxicDamage: 1
+  toxicSpeed: 1
+  toxicTicks: 4
   towerName: Toxic Tower
   kills: 0
   upgradeCostNormal: 0
   upgradeCostFreeze: 0
   upgradeCostToxic: 0
   upgradeBaseCost: 0
-  upgradeCostModifier: 1.5
+  upgradeCostModifier: 3
   level: 1
   maxLevel: 10
   enemyLocked: 0
@@ -662,6 +666,3 @@ MonoBehaviour:
   musicPlayer: {fileID: 0}
   muzzleFlash: {fileID: 5516994694540561928}
   flashTime: 0.2
-  toxicDamage: 1
-  toxicSpeed: 1
-  toxicTicks: 4

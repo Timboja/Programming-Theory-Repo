@@ -2923,15 +2923,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave: 0
   live: 10
-  money: 20
+  money: 30
   difficultModifer: 0
   baseRangeNormalTower: 0
-  baseCostNormalTower: 10
+  baseCostNormalTower: 15
   baseRangeFreezeTower: 0
-  baseCostFreezeTower: 16
+  baseCostFreezeTower: 20
   baseRangeToxicTower: 0
-  baseCostToxicTower: 20
-  baseCostBombs: 15
+  baseCostToxicTower: 25
+  baseCostBombs: 20
   costRemoveRockBig: 120
   costRemoveRocksmall: 60
   musicPlayer: {fileID: 1131627068}
@@ -5022,10 +5022,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainManager: {fileID: 372367218}
   enemySpawnList:
-  - {fileID: 2377592338449206005, guid: 3ef97816cf97b4f52835a1699b74c140, type: 3}
+  - {fileID: 125804082241470768, guid: 829657dedfc394aa8b9e84c69d45f2eb, type: 3}
   - {fileID: 8415901559217927373, guid: 02c0bbf03259b46f99ff9b75c6920518, type: 3}
   - {fileID: 6338947090687946381, guid: 2248a96262fc345b9a0b67cef4fa3e47, type: 3}
-  - {fileID: 125804082241470768, guid: 829657dedfc394aa8b9e84c69d45f2eb, type: 3}
+  - {fileID: 2377592338449206005, guid: 3ef97816cf97b4f52835a1699b74c140, type: 3}
   spawnDelay: 1
   enemysSpawing: 0
 --- !u!1 &858897356
@@ -5664,7 +5664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.52, y: 20, z: -1.1}
+  m_LocalPosition: {x: -3.85, y: 19.54, z: -1.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

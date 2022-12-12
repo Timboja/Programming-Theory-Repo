@@ -2040,13 +2040,17 @@ MonoBehaviour:
   roationSpeed: 0
   attackSpeed: 2
   attackDamage: 10
+  freezeStrength: 0
+  toxicDamage: 0
+  toxicSpeed: 0
+  toxicTicks: 0
   towerName: Normal Tower
   kills: 0
   upgradeCostNormal: 0
   upgradeCostFreeze: 0
   upgradeCostToxic: 0
   upgradeBaseCost: 0
-  upgradeCostModifier: 1.2
+  upgradeCostModifier: 2
   level: 1
   maxLevel: 10
   enemyLocked: 0

@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 3329241638821886925}
   - component: {fileID: 2082194524}
   - component: {fileID: 2082194525}
-  - component: {fileID: 2082194523}
+  - component: {fileID: -8791923380993309211}
   - component: {fileID: 2082194526}
   - component: {fileID: 2082194527}
   - component: {fileID: 3957720833132406863}
@@ -464,7 +464,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3809452, y: 1.2328014, z: 0.9160702}
   m_Center: {x: -0.03209591, y: 0.57984567, z: -0.04196489}
---- !u!114 &2082194523
+--- !u!114 &-8791923380993309211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -473,10 +473,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 125804082241470768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2fe973fc4a3e4e378944db43d1dbfc0, type: 3}
+  m_Script: {fileID: 11500000, guid: 258e33ff80fa04353847ce73c067b7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 300
+  maxHealth: 600
   currentHealth: 0
   damage: 0
   bounty: 50
