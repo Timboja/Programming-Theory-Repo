@@ -25,11 +25,6 @@ public class UpgradeMenuUI : MonoBehaviour
     public float freezeUi;
     public int toxicUi;
 
-    public float outOfBoundsZBottom;
-    public float outOfBoundsZTop;
-    public float outOfBoundsXRight;
-    public float outOfBoundsXLeft;
-
     public GameObject towerScript;
     public GameObject mainManager;
     public GameObject playerController;
@@ -46,36 +41,6 @@ public class UpgradeMenuUI : MonoBehaviour
         towerScript.GetComponent<NormalTower>();
         towerNameText.text = towerScript.GetComponent<Tower>().towerName;
 
-        //UI out of bounds check
-
-        if (transform.position.x >= outOfBoundsXRight)
-        {
-
-            //Debug.Log(transform.position.x + " >= outOfBoundsXRight: " + outOfBoundsXRight);
-            transform.position = transform.position + new Vector3(-6, 0, 0);
-
-        }
-        else if (transform.position.x <= outOfBoundsXLeft)
-        {
-
-            //Debug.Log(transform.position.x + " <= outOfBoundsXLeft: " + outOfBoundsXLeft);
-            transform.position = transform.position + new Vector3(6, 0, 4);
-
-        }
-        else if (transform.position.z <= outOfBoundsZBottom)
-        {
-
-            //Debug.Log(transform.position.z + " <= outOfBoundsZBottom: " + outOfBoundsZBottom);
-            transform.position = transform.position + new Vector3(0, 0, 4);
-
-        }
-        else if (transform.position.z >= outOfBoundsZTop)
-        {
-
-            //Debug.Log(transform.position.z + " >= outOfBoundsZTop: " + outOfBoundsZTop);
-            transform.position = transform.position + new Vector3(0, 0, -1);
-
-        }
     }
 
     // Update is called once per frame
@@ -88,10 +53,10 @@ public class UpgradeMenuUI : MonoBehaviour
         attackDamageText.text = "Attack Damage: " + attackDamageUi;
 
         attackSpeedUi = towerScript.GetComponent<Tower>().attackSpeed;
-        attackSpeedText.text = "Attack Speed: " + attackSpeedUi;
+        attackSpeedText.text = "Attack Speed: " + Mathf.Round(attackSpeedUi * 100.0f) * 0.01f;
 
         attackRangeUi = towerScript.GetComponent<Tower>().range;
-        attackRangeText.text = "Attack Range: " + attackRangeUi;
+        attackRangeText.text = "Attack Range: " + Mathf.Round(attackRangeUi * 100.0f) * 0.01f;
 
         levelUi = towerScript.GetComponent<Tower>().level;
         levelText.text = "Level: " + levelUi;
@@ -108,7 +73,7 @@ public class UpgradeMenuUI : MonoBehaviour
             costText.text = "Upgrade Cost: " + costUi;
 
             freezeUi = towerScript.GetComponent<FreezeTower>().freezeStrength;
-            freezeText.text = "Freeze Strengt: " + freezeUi;
+            freezeText.text = "Freeze Strengt: " + Mathf.Round(freezeUi * 100.0f) * 0.01f;
         }
 
         if (towerScript.GetComponent<Tower>().towerName == "Toxic Tower")

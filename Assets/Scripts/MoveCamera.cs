@@ -21,19 +21,8 @@ public class MoveCamera : MonoBehaviour
     public float CameraPanTimeWelcome;
     public float CameraPanTimeSwitch;
 
-
-    public float turningRate;
-
-    public void Start()
-    {
-
-        topDownView = new Vector3(-3.85F, 19.54F, -1.66F);
-        targetRotationTopDownView = Quaternion.Euler(90, 0, 0);
-
-        actionView = new Vector3(-3F, 4, -14);
-        targetRotationActionView = Quaternion.Euler(15.682F, -9.394F, 0);
-
-    }
+    public float turningRateWelcome;
+    public float turningRateSwitch;
 
     public void CamWelcomeToTopView()
     {
@@ -47,10 +36,13 @@ public class MoveCamera : MonoBehaviour
 
     public void CamSwitchView()
     {
-
-        isLerpingSwitch = true;
-        currentPosition = transform.position;
-
+        if (!isLerpingSwitch)
+        {
+            isLerpingSwitch = true;
+            currentPosition = transform.position;
+            actionView = new Vector3(-3F, 4, -14);
+            targetRotationActionView = Quaternion.Euler(15.682F, -9.394F, 0);
+        }
     }
 
     void FixedUpdate()
@@ -61,50 +53,48 @@ public class MoveCamera : MonoBehaviour
 
             transform.position = Vector3.Lerp(cameraWelcomePosition, topDownView, timer / CameraPanTimeWelcome);
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotationTopDownView, turningRate * Time.deltaTime);
-
-            Debug.Log("Lerp Welcome");
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotationTopDownView, turningRateWelcome * Time.deltaTime);
 
             if (transform.position == topDownView)
             {
+                timer = 0;
                 isLerpingWelcome = false;
-                Debug.Log("Movement Stop");
+                //transform.rotation = Quaternion.Euler(90, 0, 0);
+                //Debug.Log("Movement Stop");
             }
         }
 
-        /*
-        if (isLerpingSwitch)
+        
+        if (isLerpingSwitch && currentPosition == actionView)
         {
             timer += Time.deltaTime;
 
             transform.position = Vector3.Lerp(currentPosition, topDownView, timer / CameraPanTimeSwitch);
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotationTopDownView, turningRate * Time.deltaTime);
-
-            Debug.Log("Lerp to topdown");
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotationTopDownView, turningRateSwitch * Time.deltaTime);
 
             if (transform.position == topDownView)
             {
+                timer = 0;
                 isLerpingSwitch = false;
-                Debug.Log("Movement Stop");
+                //Debug.Log("Movement Stop");
             }
         }
-        */
         
-        if (isLerpingSwitch && transform.position == topDownView)
+        
+        if (isLerpingSwitch && currentPosition == topDownView)
         {
             timer += Time.deltaTime;
 
             transform.position = Vector3.Lerp(currentPosition, actionView, timer / CameraPanTimeSwitch);
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotationActionView, turningRate * Time.deltaTime);
-
-            Debug.Log("Lerp to action view");
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotationActionView, turningRateSwitch * Time.deltaTime);
 
             if (transform.position == actionView)
             {
+                timer = 0;
                 isLerpingSwitch = false;
-                Debug.Log("Movement Stop");
+                //Debug.Log("Movement Stop");
             }
         }
         

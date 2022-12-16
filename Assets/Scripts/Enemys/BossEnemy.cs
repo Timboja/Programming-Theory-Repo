@@ -28,7 +28,7 @@ public class BossEnemy : Enemy
         if (other.gameObject.tag == "BulletNormalTower")
         {
             damage = other.GetComponent<BulletBehavior>().attackDamageBullet;
-            Debug.Log("Hit damage: " + damage);
+            //Debug.Log("Hit damage: " + damage);
             TakeDamage(damage);
         }
         if (other.gameObject.tag == "BulletFreezeTower")

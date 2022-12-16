@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
                             basePosition = raycasthit.transform.position;
                             Destroy(raycasthit.transform.gameObject);
 
-                            Instantiate(normalTower, basePosition, transform.rotation);
+                            Instantiate(normalTower, basePosition + new Vector3(0,-0.044F,0), transform.rotation);
                             mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostNormalTower;
 
                             musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
                             basePosition = raycasthit.transform.position;
                             Destroy(raycasthit.transform.gameObject);
 
-                            Instantiate(freezeTower, basePosition, transform.rotation);
+                            Instantiate(freezeTower, basePosition + new Vector3(0, -0.044F, 0), transform.rotation);
                             mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostFreezeTower;
 
                             musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
                             basePosition = raycasthit.transform.position;
                             Destroy(raycasthit.transform.gameObject);
 
-                            Instantiate(toxicTower, basePosition, transform.rotation);
+                            Instantiate(toxicTower, basePosition + new Vector3(0, -0.044F, 0), transform.rotation);
                             mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostToxicTower;
 
                             musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();

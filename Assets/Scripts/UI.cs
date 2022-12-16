@@ -79,7 +79,7 @@ public class UI : MonoBehaviour
         if (moneyLerpColorText == true)
         {
             moneyText.color = Color.Lerp(Color.yellow, Color.white, colorMoneyChangeTime);
-            colorMoneyChangeTime += 0.05F;
+            colorMoneyChangeTime += 0.03F;
 
             if (colorMoneyChangeTime >= 1)
             {
@@ -90,7 +90,7 @@ public class UI : MonoBehaviour
         if (waveLerpColorText == true)
         {
             waveText.color = Color.Lerp(Color.blue, Color.white, colorWaveChangeTime);
-            colorWaveChangeTime += 0.05F;
+            colorWaveChangeTime += 0.02F;
 
             if (colorWaveChangeTime >= 1)
             {
@@ -101,7 +101,7 @@ public class UI : MonoBehaviour
         if (livesLerpColorText == true)
         {
             livesText.color = Color.Lerp(Color.red, Color.white, colorLivesChangeTime);
-            colorLivesChangeTime += 0.05F;
+            colorLivesChangeTime += 0.03F;
 
             if (colorLivesChangeTime >= 1)
             {
