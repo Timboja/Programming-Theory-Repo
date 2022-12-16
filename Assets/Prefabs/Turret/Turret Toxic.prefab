@@ -322,7 +322,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51.395, y: -90}
+  m_AnchoredPosition: {x: -21, y: -90}
   m_SizeDelta: {x: 454.096, y: 50.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &604083915655017433
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -8.876648, w: 0}
+  m_margin: {x: 0, y: 0, z: -27.652939, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -641,7 +641,7 @@ MonoBehaviour:
   range: 4
   roationSpeed: 0
   attackSpeed: 1.5
-  attackDamage: 2
+  attackDamage: 6
   freezeStrength: 0
   toxicDamage: 1
   toxicSpeed: 1
@@ -652,7 +652,7 @@ MonoBehaviour:
   upgradeCostFreeze: 0
   upgradeCostToxic: 0
   upgradeBaseCost: 0
-  upgradeCostModifier: 3
+  upgradeCostModifier: 1.4
   level: 1
   maxLevel: 10
   enemyLocked: 0

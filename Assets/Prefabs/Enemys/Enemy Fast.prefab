@@ -268,7 +268,7 @@ MonoBehaviour:
   maxHealth: 12
   currentHealth: 0
   damage: 0
-  bounty: 2
+  bounty: 1
   enemyDamage: 1
   freeze: 0
   toxicDamage: 0
@@ -294,7 +294,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1bc98db60a9c46a4391d18c8edb9f6fc, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

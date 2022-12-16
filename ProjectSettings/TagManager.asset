@@ -26,6 +26,8 @@ TagManager:
   - Road
   - Rocks
   - MusicPlayer
+  - Turret Base 2x
+  - Ghost
   layers:
   - Default
   - TransparentFX

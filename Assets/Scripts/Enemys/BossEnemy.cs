@@ -7,8 +7,9 @@ public class BossEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        uI = GameObject.FindGameObjectWithTag("UI");
         mainManager = GameObject.FindGameObjectWithTag("MainManager");
-
+        musicPlayer = GameObject.FindGameObjectWithTag("MusicPlayer");
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
     }
@@ -60,7 +61,7 @@ public class BossEnemy : Enemy
     {
         if (collision.gameObject.tag == "Bomb")
         {
-            Debug.Log("Bomb damage");
+            //Debug.Log("Bomb damage");
             damage = collision.gameObject.GetComponent<Bombs>().bombDamage;
             TakeDamage(damage);
         }

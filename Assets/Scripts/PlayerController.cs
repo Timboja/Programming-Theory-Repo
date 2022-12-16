@@ -20,11 +20,7 @@ public class PlayerController : MonoBehaviour
 
     public float bombsYoffset;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        ui = GameObject.FindGameObjectWithTag("UI");
-    }
+    public bool bombsOnCooldown;
 
     // Update is called once per frame
     void Update()
@@ -44,88 +40,124 @@ public class PlayerController : MonoBehaviour
 
                 //Checks if the ray hits a Turret Base and the tower build icon is clicked
 
-                if (raycasthit.transform.CompareTag("Turret Base") && ui.GetComponent<UI>().normalTowerClicked)
+                if (raycasthit.transform.CompareTag("Turret Base") || raycasthit.transform.CompareTag("Turret Base 2x"))
                 {
-                    //Cecks if theres enough Money to build a tower
-
-                    if (mainManager.GetComponent<MainManager>().money >= mainManager.GetComponent<MainManager>().baseCostNormalTower)
+                    if (ui.GetComponent<UI>().normalTowerClicked)
                     {
-                        //Deletes the Turret Base and places the tower on the position
+                        //Cecks if theres enough Money to build a tower
 
-                        basePosition = raycasthit.transform.position;
-                        Destroy(raycasthit.transform.gameObject);
+                        if (mainManager.GetComponent<MainManager>().money >= mainManager.GetComponent<MainManager>().baseCostNormalTower)
+                        {
+                            //Deletes the Turret Base and places the tower on the position
 
-                        Instantiate(normalTower, basePosition, transform.rotation);
-                        mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostNormalTower;
+                            if (raycasthit.transform.CompareTag("Turret Base 2x"))
+                            {
+                                mainManager.GetComponent<MainManager>().buildOn2xBase = true;
+                            }
 
-                        musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
+                            basePosition = raycasthit.transform.position;
+                            Destroy(raycasthit.transform.gameObject);
 
-                    }
-                    else
-                    {
-                        ui.GetComponent<UI>().notEnoughMoney();
-                        musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
+                            Instantiate(normalTower, basePosition, transform.rotation);
+                            mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostNormalTower;
+
+                            musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
+
+                        }
+                        else
+                        {
+                            ui.GetComponent<UI>().notEnoughMoney();
+                            musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
+                        }
                     }
 
                 }
-                else if (raycasthit.transform.CompareTag("Turret Base") && ui.GetComponent<UI>().freezeTowerClicked)
+                if (raycasthit.transform.CompareTag("Turret Base") || raycasthit.transform.CompareTag("Turret Base 2x"))
                 {
-                    //Cecks if theres enough Money to buiild a tower
-
-                    if (mainManager.GetComponent<MainManager>().money >= mainManager.GetComponent<MainManager>().baseCostFreezeTower)
+                    if (ui.GetComponent<UI>().freezeTowerClicked)
                     {
+                        //Cecks if theres enough Money to build a tower
 
-                        //Deletes the Turret Base and places the tower on the position
+                        if (mainManager.GetComponent<MainManager>().money >= mainManager.GetComponent<MainManager>().baseCostFreezeTower)
+                        {
 
-                        basePosition = raycasthit.transform.position;
-                        Destroy(raycasthit.transform.gameObject);
+                            //Deletes the Turret Base and places the tower on the position
 
-                        Instantiate(freezeTower, basePosition, transform.rotation);
-                        mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostFreezeTower;
+                            if (raycasthit.transform.CompareTag("Turret Base 2x"))
+                            {
+                                mainManager.GetComponent<MainManager>().buildOn2xBase = true;
+                            }
 
-                        musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
+                            basePosition = raycasthit.transform.position;
+                            Destroy(raycasthit.transform.gameObject);
+
+                            Instantiate(freezeTower, basePosition, transform.rotation);
+                            mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostFreezeTower;
+
+                            musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
+                        }
+                        else
+                        {
+                            ui.GetComponent<UI>().notEnoughMoney();
+                            musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
+                        }
                     }
-                    else
+                }
+                if (raycasthit.transform.CompareTag("Turret Base") || raycasthit.transform.CompareTag("Turret Base 2x"))
+                {
+                    if (ui.GetComponent<UI>().toxicTowerClicked)
                     {
-                        ui.GetComponent<UI>().notEnoughMoney();
-                        musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
+                        //Cecks if theres enough Money to build a tower
+
+                        if (mainManager.GetComponent<MainManager>().money >= mainManager.GetComponent<MainManager>().baseCostToxicTower)
+                        {
+
+                            //Deletes the Turret Base and places the tower on the position
+
+                            if (raycasthit.transform.CompareTag("Turret Base 2x"))
+                            {
+                                mainManager.GetComponent<MainManager>().buildOn2xBase = true;
+                            }
+
+                            basePosition = raycasthit.transform.position;
+                            Destroy(raycasthit.transform.gameObject);
+
+                            Instantiate(toxicTower, basePosition, transform.rotation);
+                            mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostToxicTower;
+
+                            musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
+                        }
+                        else
+                        {
+                            ui.GetComponent<UI>().notEnoughMoney();
+                            musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
+                        }
                     }
 
                 }
-                else if (raycasthit.transform.CompareTag("Turret Base") && ui.GetComponent<UI>().toxicTowerClicked)
-                {
-                    //Cecks if theres enough Money to build a tower
-
-                    if (mainManager.GetComponent<MainManager>().money >= mainManager.GetComponent<MainManager>().baseCostToxicTower)
-                    {
-
-                        //Deletes the Turret Base and places the tower on the position
-
-                        basePosition = raycasthit.transform.position;
-                        Destroy(raycasthit.transform.gameObject);
-
-                        Instantiate(toxicTower, basePosition, transform.rotation);
-                        mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostToxicTower;
-
-                        musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
-                    }
-                    else
-                    {
-                        ui.GetComponent<UI>().notEnoughMoney();
-                        musicPlayer.GetComponent<MusicPlayer>().PlayErrorSound();
-                    }
-
-                }
-                else if (raycasthit.transform.CompareTag("Road") && ui.GetComponent<UI>().bombsClicked)
+                if (raycasthit.transform.CompareTag("Road") && ui.GetComponent<UI>().bombsClicked)
                 {
                     //Cecks if theres enough Money to build a tower
 
                     if (mainManager.GetComponent<MainManager>().money >= mainManager.GetComponent<MainManager>().baseCostBombs)
                     {
-                        Instantiate(bombs, raycasthit.point + new Vector3(0,bombsYoffset,0), transform.rotation);
-                        mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostBombs;
+                        if (bombsOnCooldown != true)
+                        {
+                            Instantiate(bombs, raycasthit.point + new Vector3(0, bombsYoffset, 0), transform.rotation);
+                            mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().baseCostBombs;
 
-                        musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
+                            musicPlayer.GetComponent<MusicPlayer>().PlayBuildSound();
+
+                            bombsOnCooldown = true;
+                            ui.GetComponent<UI>().disableBombsButton(true);
+                            StartCoroutine(BombCooldown());
+
+                        }
+                        else if (bombsOnCooldown == true)
+                        {
+                            ui.GetComponent<UI>().bombsCooldownInfo();
+                        }
+
                     }
                     else
                     {
@@ -193,4 +225,12 @@ public class PlayerController : MonoBehaviour
         currentUpgradeMenu.transform.Find("Detection Sphere").GetComponent<MeshRenderer>().enabled = false;
         currentUpgradeMenu = null;
     }
+
+    IEnumerator BombCooldown()
+    {
+        yield return new WaitForSeconds(mainManager.GetComponent<MainManager>().bombCooldown);
+        bombsOnCooldown = false;
+        ui.GetComponent<UI>().disableBombsButton(false);
+    }
+
 }

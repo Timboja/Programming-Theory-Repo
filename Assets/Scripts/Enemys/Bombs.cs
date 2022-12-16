@@ -26,7 +26,7 @@ public class Bombs : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enviroment"))
         {
-            Debug.Log("Enviroment colision");
+            //Debug.Log("Enviroment colision");
             bombController.GetComponent<BombController>().bombCountController--;
             Destroy(gameObject);
         }

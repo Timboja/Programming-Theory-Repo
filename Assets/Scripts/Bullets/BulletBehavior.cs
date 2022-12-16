@@ -72,10 +72,15 @@ public class BulletBehavior : MonoBehaviour
 
         if (other.CompareTag("Enviroment") || other.CompareTag("Road"))
         {
-            Debug.Log("Hit Enviroment");
+            //Debug.Log("Hit Enviroment");
             bulletInFlight = false;
-            Destroy(gameObject);
+            StartCoroutine(DestroyDelay());
 
         }
+    }
+    IEnumerator DestroyDelay()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 }

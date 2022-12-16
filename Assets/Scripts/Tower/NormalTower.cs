@@ -6,7 +6,7 @@ public class NormalTower : Tower
 {
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         UpdateTowerRange(range);
 
@@ -45,4 +45,5 @@ public class NormalTower : Tower
         muzzleFlash.enabled = false;
 
     }
+
 }

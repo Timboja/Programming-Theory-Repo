@@ -115,7 +115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70.122, y: -91}
+  m_AnchoredPosition: {x: 8, y: -91}
   m_SizeDelta: {x: 483.821, y: 50.428}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &238724526563171492
@@ -708,8 +708,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 4.5
   roationSpeed: 0
-  attackSpeed: 2.5
-  attackDamage: 3
+  attackSpeed: 2
+  attackDamage: 8
   freezeStrength: 0.2
   toxicDamage: 0
   toxicSpeed: 0
@@ -720,7 +720,7 @@ MonoBehaviour:
   upgradeCostFreeze: 0
   upgradeCostToxic: 0
   upgradeBaseCost: 0
-  upgradeCostModifier: 3
+  upgradeCostModifier: 1.4
   level: 1
   maxLevel: 10
   enemyLocked: 0

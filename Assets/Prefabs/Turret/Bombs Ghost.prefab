@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5043517500568922041, guid: 5cec4657dc7ad4876a9daf54fdad477a, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
     - target: {fileID: 5043517500568922042, guid: 5cec4657dc7ad4876a9daf54fdad477a, type: 3}
       propertyPath: m_RootOrder
       value: 0

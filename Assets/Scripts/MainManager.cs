@@ -20,10 +20,12 @@ public class MainManager : MonoBehaviour
     public int baseCostToxicTower;
 
     public int baseCostBombs;
+    public float bombCooldown;
 
     public int costRemoveRockBig;
     public int costRemoveRocksmall;
 
+    public GameObject cam;
     public GameObject musicPlayer;
     public GameObject spawnerObject;
     public GameObject startButton;
@@ -40,6 +42,7 @@ public class MainManager : MonoBehaviour
     public bool gameIsActive = true;
     public bool waveRunning;
     public bool enemyOnField;
+    public bool buildOn2xBase = false;
 
     // Start is called before the first frame update
     void Start()
@@ -85,13 +88,23 @@ public class MainManager : MonoBehaviour
 
     }
 
+    public void GameStart()
+    {
+        
+        cam.GetComponent<MoveCamera>().CamWelcomeToTopView();
+        StartCoroutine(WaitUi());
+
+    }
+
     public void StartWave()
     {
         if (gameIsActive)
         {
+            musicPlayer.GetComponent<MusicPlayer>().PlayStartWaveSound();
             waveRunning = true;
             startButton.SetActive(false);
             wave++;
+            ui.GetComponent<UI>().TextColorChange("Wave");
 
             if (wave == 10)
             {
@@ -134,7 +147,7 @@ public class MainManager : MonoBehaviour
 
         bool enemysOnField = false;
 
-        if (GameObject.Find("Enemy Normal(Clone)") == null && GameObject.Find("Enemy Fast(Clone)") == null && GameObject.Find("Enemy Spawnling(Clone)") == null && GameObject.Find("Enemy Boss(Clone)") == null)
+        if (GameObject.Find("Enemy Normal(Clone)") == null && GameObject.Find("Enemy Fast(Clone)") == null && GameObject.Find("Enemy Spawnling(Clone)") == null && GameObject.Find("Enemy Boss(Clone)") == null && GameObject.Find("Enemy Elite(Clone)") == null && GameObject.Find("Enemy Boss Elite(Clone)") == null)
         {
             enemysOnField = false;
         }
@@ -147,4 +160,11 @@ public class MainManager : MonoBehaviour
 
     }
 
+    IEnumerator WaitUi()
+    {
+
+        yield return new WaitForSeconds(5);
+        ui.SetActive(true);
+
+    }
 }

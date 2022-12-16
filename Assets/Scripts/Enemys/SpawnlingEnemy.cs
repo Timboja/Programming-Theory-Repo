@@ -9,8 +9,9 @@ public class SpawnlingEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        uI = GameObject.FindGameObjectWithTag("UI");
         mainManager = GameObject.FindGameObjectWithTag("MainManager");
-
+        musicPlayer = GameObject.FindGameObjectWithTag("MusicPlayer");
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
     }

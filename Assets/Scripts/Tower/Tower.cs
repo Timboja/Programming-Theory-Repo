@@ -52,6 +52,12 @@ public class Tower : MonoBehaviour
 
         CalcUpgradeCost(towerName);
 
+        if (mainManager.GetComponent<MainManager>().buildOn2xBase == true)
+        {
+            range *= 2;
+            mainManager.GetComponent<MainManager>().buildOn2xBase = false;
+        }
+
     }
 
     //Calculates the next upgrade costs for active tower
@@ -60,15 +66,15 @@ public class Tower : MonoBehaviour
     {
         if (towerName == "Normal Tower")
         {
-            upgradeCostNormal = Mathf.RoundToInt((mainManager.GetComponent<MainManager>().baseCostNormalTower + level) * upgradeCostModifier);
+            upgradeCostNormal = Mathf.RoundToInt((mainManager.GetComponent<MainManager>().baseCostNormalTower + (level * 4)) * upgradeCostModifier);
         }
         else if (towerName == "Freeze Tower")
         {
-            upgradeCostFreeze = Mathf.RoundToInt((mainManager.GetComponent<MainManager>().baseCostFreezeTower + level) * upgradeCostModifier);
+            upgradeCostFreeze = Mathf.RoundToInt((mainManager.GetComponent<MainManager>().baseCostFreezeTower + (level * 4)) * upgradeCostModifier);
         }
         else if (towerName == "Toxic Tower")
         {
-            upgradeCostToxic = Mathf.RoundToInt((mainManager.GetComponent<MainManager>().baseCostToxicTower + level) * upgradeCostModifier);
+            upgradeCostToxic = Mathf.RoundToInt((mainManager.GetComponent<MainManager>().baseCostToxicTower + (level * 4)) * upgradeCostModifier);
         }
         else
         {
@@ -171,7 +177,6 @@ public class Tower : MonoBehaviour
                 attackSpeed -= 0.05F;
                 attackDamage = Mathf.RoundToInt(attackDamage + (level / 2));
                 toxicDamage += 1;
-                toxicTicks += 1;
 
                 CalcUpgradeCost(towerName);
 

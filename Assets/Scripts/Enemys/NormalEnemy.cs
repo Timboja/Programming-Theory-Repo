@@ -5,15 +5,16 @@ using UnityEngine;
 public class NormalEnemy : Enemy
 {
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
+        uI = GameObject.FindGameObjectWithTag("UI");
         mainManager = GameObject.FindGameObjectWithTag("MainManager");
-
+        musicPlayer = GameObject.FindGameObjectWithTag("MusicPlayer");
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
     }
 
-    private void Update()
+    public void Update()
     {
         if (currentHealth != maxHealth && !hasDamage)
         {
@@ -27,7 +28,7 @@ public class NormalEnemy : Enemy
         if (other.gameObject.tag == "BulletNormalTower")
         {
             damage = other.GetComponent<BulletBehavior>().attackDamageBullet;
-            Debug.Log("Hit damage: " + damage);
+            //Debug.Log("Hit damage: " + damage);
             TakeDamage(damage);
         }
         if (other.gameObject.tag == "BulletFreezeTower")
@@ -60,7 +61,7 @@ public class NormalEnemy : Enemy
     {
         if (collision.gameObject.tag == "Bomb")
         {
-            Debug.Log("Bomb damage");
+            //Debug.Log("Bomb damage");
             damage = collision.gameObject.GetComponent<Bombs>().bombDamage;
             TakeDamage(damage);
         }

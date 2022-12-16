@@ -13,6 +13,7 @@ public class GhostTower : MonoBehaviour
     public GameObject detectionSphere;
     public GameObject ui;
     public LayerMask layersToHit;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,13 @@ public class GhostTower : MonoBehaviour
         {
             transform.position = raycasthit.point;
         }
+
+        if (ui.GetComponent<UI>().killGhost == true)
+        {
+            ui.GetComponent<UI>().killGhost = false;
+            Destroy(gameObject);
+        }
+
 
         //If rightclick is released destroy the object.
 

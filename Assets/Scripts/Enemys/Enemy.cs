@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour
     public HealthBar healthbar;
     public GameObject healthbarCanvas;
     public GameObject spawnlings;
+    public GameObject musicPlayer;
+    public GameObject uI;
 
     public AudioSource hitSound;
     public AudioSource deathSound;
@@ -44,6 +46,7 @@ public class Enemy : MonoBehaviour
         {
 
             mainManager.GetComponent<MainManager>().money += bounty;
+            uI.GetComponent<UI>().TextColorChange("Money");
 
             Instantiate(enemyDeathExplosition,transform.position,transform.rotation);
 
@@ -71,7 +74,7 @@ public class Enemy : MonoBehaviour
         {
 
             mainManager.GetComponent<MainManager>().money += bounty;
-
+            uI.GetComponent<UI>().TextColorChange("Money");
 
             for (int i = 0; i < spawnlingNumber; i++)
             {
@@ -113,6 +116,8 @@ public class Enemy : MonoBehaviour
     {
 
         mainManager.GetComponent<MainManager>().live -= damage;
+        uI.GetComponent<UI>().TextColorChange("Life");
+        musicPlayer.GetComponent<MusicPlayer>().PlaylooseLifeSound();
 
     }
 

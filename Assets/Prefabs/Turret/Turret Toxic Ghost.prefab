@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1069405676724561343, guid: 96b5ce1d0f0224ba9aa673696baec6e0, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
     - target: {fileID: 1480288803610553569, guid: 96b5ce1d0f0224ba9aa673696baec6e0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -222,6 +226,10 @@ PrefabInstance:
     - target: {fileID: 8463199429270076664, guid: 96b5ce1d0f0224ba9aa673696baec6e0, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771177481042871723, guid: 96b5ce1d0f0224ba9aa673696baec6e0, type: 3}
+      propertyPath: upgradeCostModifier
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8790337863315383266, guid: 96b5ce1d0f0224ba9aa673696baec6e0, type: 3}
       propertyPath: m_Materials.Array.data[0]

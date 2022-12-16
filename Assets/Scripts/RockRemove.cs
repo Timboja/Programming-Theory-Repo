@@ -8,7 +8,8 @@ public class RockRemove : MonoBehaviour
 
     public GameObject mainManager;
     public GameObject ui;
-    public GameObject removeExplosition;
+    public ParticleSystem removeExplositionBig;
+    public ParticleSystem removeExplositionSmall;
 
     public string rockSize;
 
@@ -37,6 +38,8 @@ public class RockRemove : MonoBehaviour
             {
                 mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().costRemoveRockBig;
 
+                removeExplositionBig.Play();
+
                 Destroy(gameObject);
             }
             else
@@ -49,6 +52,8 @@ public class RockRemove : MonoBehaviour
             if (mainManager.GetComponent<MainManager>().money >= mainManager.GetComponent<MainManager>().costRemoveRocksmall)
             {
                 mainManager.GetComponent<MainManager>().money -= mainManager.GetComponent<MainManager>().costRemoveRocksmall;
+
+                removeExplositionSmall.Play();
 
                 Destroy(gameObject);
             }

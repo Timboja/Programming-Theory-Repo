@@ -14,34 +14,34 @@ public class Spawner : MonoBehaviour
     public int[,] enemyWaves;
 
     // Start is called before the first frame update
-    void Start()
+   public void Start()
     {
         //Array Init
 
         enemyWaves = new int[,] {
 
-        // { Boss Enemy, Fast Enemy, Spawnling Enemy, Normal Enemy }
+        // {  Boss Enemy, Elite Enemy, Spawnling Enemy, Normal Enemy, Fast Enemy, Elite Boss Enemy }
 
         // Wave1
-        { 0, 0, 0, 3 },
+        { 0, 0, 0, 3, 0, 0 },
         // Wave2
-        { 0, 0, 0, 12 },
+        { 0, 0, 0, 15, 0, 0 },
         // Wave3
-        { 0, 10, 1, 0 },
+        { 0, 0, 1, 2, 0, 0 },
         // Wave4
-        { 0, 15, 2, 20 },
+        { 0, 0, 2, 30, 15, 0 },
         // Wave5
-        { 1, 10, 0, 10 },
+        { 1, 0, 0, 4, 0, 0 },
         // Wave6
-        { 0, 4, 2, 30 },
+        { 0, 2, 2, 30, 4, 0 },
         // Wave7
-        { 0, 0, 10, 0 },
+        { 0, 10, 8, 0, 30, 0 },
         // Wave8
-        { 0, 30, 0, 30 },
+        { 0, 25, 4, 30, 50, 0 },
         // Wave9
-        { 0, 30, 4, 0 },
+        { 0, 12, 4, 40, 60, 0 },
         // Wave10
-        { 3, 20, 8, 40 },
+        { 4, 20, 8, 40, 60, 1 },
 
     };
 
@@ -52,7 +52,13 @@ public class Spawner : MonoBehaviour
     {
 
         StartCoroutine(SpawnWaveDelay(wave));
+
         spawnDelay -= 0.05F;
+
+        if (wave >= 7)
+        {
+            spawnDelay -= 0.05F;
+        }
 
     }
 

@@ -19,9 +19,11 @@ public class MusicPlayer : MonoBehaviour
     public AudioClip buildSound;
     public AudioClip upgradeSound;
     public AudioClip errorSound;
+    public AudioClip startWaveSound;
+    public AudioClip looseLifeSound;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         audioPlayer.clip = mainMusic1;
         audioPlayer.Play();
@@ -94,6 +96,24 @@ public class MusicPlayer : MonoBehaviour
 
         audioEffectsPlayer.Stop();
         audioEffectsPlayer.clip = errorSound;
+        audioEffectsPlayer.Play();
+
+    }
+
+    public void PlaylooseLifeSound()
+    {
+
+        audioEffectsPlayer.Stop();
+        audioEffectsPlayer.clip = looseLifeSound;
+        audioEffectsPlayer.Play();
+
+    }
+
+    public void PlayStartWaveSound()
+    {
+
+        audioEffectsPlayer.Stop();
+        audioEffectsPlayer.clip = startWaveSound;
         audioEffectsPlayer.Play();
 
     }
