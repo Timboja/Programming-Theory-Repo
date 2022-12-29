@@ -5913,8 +5913,8 @@ MonoBehaviour:
   baseCostToxicTower: 25
   baseCostBombs: 20
   bombCooldown: 2
-  costRemoveRockBig: 150
-  costRemoveRocksmall: 90
+  costRemoveRockBig: 120
+  costRemoveRocksmall: 60
   cam: {fileID: 963194225}
   musicPlayer: {fileID: 1131627068}
   spawnerObject: {fileID: 796059350}
@@ -5925,12 +5925,7 @@ MonoBehaviour:
   ghostBombs: {fileID: 8372510609526331618, guid: 7d52896066a3343a3ab80bb5d7bb7368, type: 3}
   ui: {fileID: 1012184917}
   explosion: {fileID: 1731816364}
-  win: 0
-  finalWave: 0
-  gameIsActive: 1
   waveRunning: 0
-  enemyOnField: 0
-  buildOn2xBase: 0
 --- !u!1 &376814290
 GameObject:
   m_ObjectHideFlags: 0
@@ -12839,8 +12834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217bace0d3e9d4d37863341e51b84b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLerpingWelcome: 0
-  isLerpingSwitch: 0
   CameraPanTimeWelcome: 5
   CameraPanTimeSwitch: 2.5
   turningRateWelcome: 17.6
@@ -13552,20 +13545,12 @@ MonoBehaviour:
   costBombsText: {fileID: 2052409390}
   infoText: {fileID: 395354358}
   noteEnoughMoney: 0
-  moneyUI: 0
-  waveUI: 0
-  livesUI: 0
-  baseCostNormalTowerUi: 0
-  baseCostFreezeTowerUi: 0
-  baseCostToxicTowerUi: 0
-  baseCostBombsUi: 0
   normalTowerClicked: 0
   freezeTowerClicked: 0
   toxicTowerClicked: 0
   bombsClicked: 0
   killGhost: 0
   moveCamScript: {fileID: 963194225}
-  waitCoRunning: 0
   bombButton: {fileID: 1694124731}
 --- !u!4 &1018167324 stripped
 Transform:

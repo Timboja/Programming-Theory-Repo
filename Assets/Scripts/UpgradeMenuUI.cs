@@ -16,14 +16,14 @@ public class UpgradeMenuUI : MonoBehaviour
     public TextMeshProUGUI freezeText;
     public TextMeshProUGUI toxicText;
 
-    public int attackDamageUi;
-    public float attackSpeedUi;
-    public float attackRangeUi;
-    public int costUi;
-    public int levelUi;
+    private int attackDamageUi;
+    private float attackSpeedUi;
+    private float attackRangeUi;
+    private int costUi;
+    private int levelUi;
 
-    public float freezeUi;
-    public int toxicUi;
+    private float freezeUi;
+    private int toxicUi;
 
     public GameObject towerScript;
     public GameObject mainManager;
@@ -47,6 +47,14 @@ public class UpgradeMenuUI : MonoBehaviour
     void Update()
     {
 
+        UpdateUpgradeMenuUi();
+
+    }
+
+    //Abstraction
+
+    public void UpdateUpgradeMenuUi()
+    {
         towerNameText.text = towerScript.GetComponent<Tower>().towerName;
 
         attackDamageUi = towerScript.GetComponent<Tower>().attackDamage;
@@ -84,7 +92,6 @@ public class UpgradeMenuUI : MonoBehaviour
             toxicUi = towerScript.GetComponent<ToxicTower>().toxicDamage;
             toxicText.text = "Toxic Strength: " + toxicUi;
         }
-
     }
 
     public void UpgradeClicked()

@@ -37,21 +37,25 @@ public class MainManager : MonoBehaviour
 
     public ParticleSystem explosion;
 
-    public bool win;
-    public bool finalWave;
-    public bool gameIsActive = true;
-    public bool waveRunning;
-    public bool enemyOnField;
-    public bool buildOn2xBase = false;
+    //Encapsulation
 
-    // Start is called before the first frame update
+    public bool win { get; private set; }
+    private bool finalWave;
+    public bool gameIsActive { get; private set; }
+
+    [SerializeField]
+    private bool waveRunning;
+    private bool enemyOnField;
+    public bool buildOn2xBase { get; set; }
+
+
     void Start()
     {
         spawnerObject.GetComponent<Spawner>();
         ui.GetComponent<UI>();
+        gameIsActive = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         //Checks game states
@@ -96,6 +100,8 @@ public class MainManager : MonoBehaviour
 
     }
 
+    //Abstraction
+
     public void StartWave()
     {
         if (gameIsActive)
@@ -117,6 +123,8 @@ public class MainManager : MonoBehaviour
         }
 
     }
+
+    //Abstraction
 
     public void GhostTower()
     {
@@ -141,6 +149,8 @@ public class MainManager : MonoBehaviour
         }
 
     }
+
+    //Abstraction
 
     public bool checkEnemysInGame()
     {

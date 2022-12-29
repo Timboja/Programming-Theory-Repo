@@ -8,10 +8,11 @@ public class Spawner : MonoBehaviour
 
     public GameObject[] enemySpawnList;
 
-    public float spawnDelay;
+    [SerializeField]
+    private float spawnDelay;
     public bool enemysSpawing;
 
-    public int[,] enemyWaves;
+    private int[,] enemyWaves;
 
     // Start is called before the first frame update
    public void Start()

@@ -33,6 +33,8 @@ public class Enemy : MonoBehaviour
 
     public ParticleSystem enemyDeathExplosition;
 
+    //Abstraction
+
     public void TakeDamage(int damage)
     {
 
@@ -92,6 +94,8 @@ public class Enemy : MonoBehaviour
 
     }
 
+    //Abstraction
+
     public void TakeFreeze(float freeze)
     {
 
@@ -102,10 +106,14 @@ public class Enemy : MonoBehaviour
         
     }
 
+    //Abstraction
+
     public void TakeToxic(int toxicDamage)
     {
         StartCoroutine(ToxicDamage(toxicDamage));
     }
+
+    //Polymorphysm
 
     public void TakeToxic(int toxicDamage, int spawnlingNumber)
     {

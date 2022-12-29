@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Bombs : MonoBehaviour
 {
-    public int bombDamage;
-    public int bombCount;
+    //Encapsulation
+
+    public int bombDamage { get; private set; }
+    public int bombCount { get; private set; }
 
     public GameObject bombController;
 

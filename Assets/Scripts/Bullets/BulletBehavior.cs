@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class BulletBehavior : MonoBehaviour 
 {
-    public float firingSpeed;
+    [SerializeField]
+    private float firingSpeed;
     public Rigidbody bulletRb;
-    public float outOfBoundsZ = 20;
-    public float outOfBoundsX = 25;
     public int attackDamageBullet;
 
     private bool bulletInFlight;
@@ -25,27 +24,6 @@ public class BulletBehavior : MonoBehaviour
         bulletRb.AddForce(bulletRb.transform.forward * firingSpeed, ForceMode.Impulse);
 
     }
-
-    /*
-    private void Update()
-    {
-        //Out of bounds detection Z,X und Destroy
-
-        if (transform.position.z >= outOfBoundsZ || transform.position.z <= -outOfBoundsZ)
-        {
-            Debug.Log("");
-            bulletInFlight = false;
-            Destroy(gameObject);
-
-        }
-        else if (transform.position.x >= outOfBoundsX || transform.position.x <= -outOfBoundsX)
-        {
-            bulletInFlight = false;
-            Destroy(gameObject);
-
-        }
-    }
-    */
 
     //Gives the bullet the attack damge of the tower
 

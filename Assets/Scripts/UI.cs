@@ -23,14 +23,16 @@ public class UI : MonoBehaviour
     public GameObject infoText;
     public bool noteEnoughMoney;
 
-    public int moneyUI;
-    public int waveUI;
-    public int livesUI;
+    //Encapsulation
 
-    public int baseCostNormalTowerUi;
-    public int baseCostFreezeTowerUi;
-    public int baseCostToxicTowerUi;
-    public int baseCostBombsUi;
+    private int moneyUI;
+    private int waveUI;
+    private int livesUI;
+
+    private int baseCostNormalTowerUi;
+    private int baseCostFreezeTowerUi;
+    private int baseCostToxicTowerUi;
+    private int baseCostBombsUi;
 
     public bool normalTowerClicked = false;
     public bool freezeTowerClicked = false;
@@ -41,9 +43,11 @@ public class UI : MonoBehaviour
     public GameObject moveCamScript;
 
     private float infoDelay = 2F;
-    public bool waitCoRunning;
+    private bool waitCoRunning;
 
     public Button bombButton;
+
+    //Encapsulation
 
     private float colorMoneyChangeTime = 0;
     private float colorWaveChangeTime = 0;
@@ -110,7 +114,6 @@ public class UI : MonoBehaviour
             }
         }
 
-
         //Win and loose context
 
         if (mainManager.GetComponent<MainManager>().gameIsActive == false && !mainManager.GetComponent<MainManager>().win)
@@ -125,6 +128,14 @@ public class UI : MonoBehaviour
             StartCoroutine(Wait());
         }
 
+        UpdateUiText();
+
+    }
+
+    //Abstraction
+
+    private void UpdateUiText()
+    {
         moneyUI = mainManager.GetComponent<MainManager>().money;
         moneyText.text = "Money: " + moneyUI;
 

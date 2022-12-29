@@ -14,15 +14,18 @@ public class MoveCamera : MonoBehaviour
     private Quaternion targetRotationActionView = Quaternion.identity;
 
     
-    public bool isLerpingWelcome;
-    public bool isLerpingSwitch;
+    private bool isLerpingWelcome;
+    private bool isLerpingSwitch;
     private float timer;
 
-    public float CameraPanTimeWelcome;
-    public float CameraPanTimeSwitch;
-
-    public float turningRateWelcome;
-    public float turningRateSwitch;
+    [SerializeField]
+    private float CameraPanTimeWelcome;
+    [SerializeField]
+    private float CameraPanTimeSwitch;
+    [SerializeField]
+    private float turningRateWelcome;
+    [SerializeField]
+    private float turningRateSwitch;
 
     public void CamWelcomeToTopView()
     {
