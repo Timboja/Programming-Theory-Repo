@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8791923380993309211, guid: 829657dedfc394aa8b9e84c69d45f2eb, type: 3}
       propertyPath: maxHealth
-      value: 2500
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: -8791923380993309211, guid: 829657dedfc394aa8b9e84c69d45f2eb, type: 3}
       propertyPath: enemyDamage

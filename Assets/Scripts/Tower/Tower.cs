@@ -26,7 +26,8 @@ public class Tower : MonoBehaviour
     public int upgradeBaseCost;
     public float upgradeCostModifier;
     public int level;
-    public int maxLevel;
+
+    private int maxLevel = 10;
 
     public bool enemyLocked = false;
 

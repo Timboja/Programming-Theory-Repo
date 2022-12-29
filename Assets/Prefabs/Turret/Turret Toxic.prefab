@@ -649,18 +649,18 @@ MonoBehaviour:
   range: 4
   roationSpeed: 0
   attackSpeed: 1.5
-  attackDamage: 6
+  attackDamage: 8
   freezeStrength: 0
   toxicDamage: 1
   toxicSpeed: 1
-  toxicTicks: 4
+  toxicTicks: 5
   towerName: Toxic Tower
   kills: 0
   upgradeCostNormal: 0
   upgradeCostFreeze: 0
   upgradeCostToxic: 0
   upgradeBaseCost: 0
-  upgradeCostModifier: 1.4
+  upgradeCostModifier: 1
   level: 1
   maxLevel: 10
   enemyLocked: 0

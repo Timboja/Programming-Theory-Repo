@@ -5911,7 +5911,7 @@ MonoBehaviour:
   baseCostFreezeTower: 20
   baseRangeToxicTower: 0
   baseCostToxicTower: 25
-  baseCostBombs: 20
+  baseCostBombs: 25
   bombCooldown: 2
   costRemoveRockBig: 120
   costRemoveRocksmall: 60

@@ -43,6 +43,7 @@ public class Spawner : MonoBehaviour
         { 0, 12, 4, 40, 60, 0 },
         // Wave10
         { 4, 20, 8, 40, 60, 1 },
+        
 
     };
 
